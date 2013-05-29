@@ -2,6 +2,10 @@
 # This script provides wisdom
 # You can now exit in a decent way.
 
+
+
+
+
 FORTUNE=/usr/bin/fortune
 for ((i = 1; i < 4; i++)); do
 	echo "On which topic do you want advice?"
