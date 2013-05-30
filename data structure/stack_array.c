@@ -44,4 +44,4 @@ element_type pop(STACK S) {
 		printf("Empty stack");
 	else
 		return S->stack_array[S->top_of_stack--];
-
+}

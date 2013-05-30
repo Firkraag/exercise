@@ -1,4 +1,8 @@
-/* This program is an application for trees. Its purpose is to list all the files recursively in the directory given by argv[1]. Output format will be that files that are depth d will have their names indented by d tabs. */
+/* This program is an application for trees. 
+Its purpose is to list all the files recursively 
+in the directory given by argv[1]. 
+Output format will be that files that are depth d 
+will have their names indented by d tabs. */
 
 /* pseudo code:
 void list_directory ( Directory_or_file D ) {
