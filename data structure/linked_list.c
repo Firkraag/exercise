@@ -1,3 +1,6 @@
+/* Some routines are copied from date structures and algorithm analysis in C.
+ * Assume use of a header node. */
+
 #include "linked_list.h"
 
 int is_empty(LIST L) {
@@ -17,7 +20,7 @@ position find(element_type x, LIST L) {
 	}
 	return p;
 }
-/* Delete from a list. Cell pointed to by p->next is wiped out.
+/* Only delete the first occurence of x and does nothing if x is not in the list. Cell pointed to by p->next is wiped out.
  * Assume that the position is legal. Assume use of a header node. */
 void delete(element_type x, LIST L) {
 	position p = find_previous(x, L);
@@ -29,8 +32,7 @@ void delete(element_type x, LIST L) {
 		free(tmp_cell);
 }
 
-/* Uses a header. If element is not found, then next field of returned 
- * value is NULL */
+/* Return position of the node before x. Uses a header. If element is not found, then next field of returned value is NULL */
 position find_previous(element_type x, LIST L) {
 	position p = L;
 
@@ -55,16 +57,25 @@ void insert(element_type x, LIST L, position p) {
 		p->next = tmp_cell;
 	}
 }
+
+void print_list(LIST L) {
+	position p;
+
+	for (p = L->next; p != NULL; p = p->next)
+		printf("%d ", p->element);
+	printf("\n");
+}
 /* find the kth in list L, return pointer to it */
 position kth(LIST L, int k) {
 	int i;
 	position p = L;
 
-	for (i = k; i > 0; i--) {
+	for (i = 0; i < k; i++) {
     	p = p->next;
   	}
   	return p;
 }
+/* All the other cells are freed, only the header is remained */
 void delete_list(LIST L) {
 	position p, tmp;
 
@@ -76,3 +87,4 @@ void delete_list(LIST L) {
 		free(tmp);
 	}
 }
+

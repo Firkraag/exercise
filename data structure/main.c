@@ -16,13 +16,6 @@ LIST create(int n) {
 
 }
 
-void print_list(LIST L) {
-	position p;
-
-	for (p = L->next; p != NULL; p = p->next)
-		printf("%d ", p->element);
-	printf("\n");
-}
 void print_lots(LIST L, LIST P) {
 	position p, ptr;
 
@@ -49,6 +42,7 @@ main() {
 	print_list(L);		
 */
 	print_lots(L, P);
+
 	delete_list(L);
 	printf("%d\n", is_empty(L)+1);
 }
