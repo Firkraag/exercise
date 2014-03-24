@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* judge the kth bit of x */
+// judge the kth bit of x, if it is 1, return 1, otherwise return 0
 int bit(int x, int k) {
 	return 0x1 & (x >> k - 1);
 	
