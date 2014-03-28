@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 int rightmost_one(unsigned x) {
 	return -x & x;
 }
