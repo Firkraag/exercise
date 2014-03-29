@@ -1,14 +1,11 @@
 #include <stdio.h>
 
+//Return 1 when x can be represented as an n-bit, 2's complement
+//number; 0 otherwise
+//Assume 1 <= n <= w
 int fits_bits(int x, int n) {
-	int N_MIN = -(1 << (n - 1));
-	int N_MAX = (1 << (n - 1)) - 1;
-
-	return N_MIN < x && x < N_MAX;	
-}
+	int size = sizeof(int) << 3;
+	int head = x >> (n - 1);
 	
-int main() {
-	fits_bits(10, 32);
-			
-
+	return (head == ~0) | (head == 0);
 }
