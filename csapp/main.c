@@ -1,6 +1,10 @@
 #include <stdio.h>
 
 main() {
-	printf("0x%x\n", rotate_right(0x12345678, 32));
+	int i;
+
+	for (i = -300; i < 300; i++)
+		printf("%d, %d\n", i, fits_bits(i, 9));
+//	printf("%x\n", bit(0xff00ff00, 17));
 }
 

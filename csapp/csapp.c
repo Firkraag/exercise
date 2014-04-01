@@ -82,7 +82,3 @@ unsigned replace_byte (unsigned x, int i, unsigned char b) {
 	return (x & ~mask) | (b << itimes8);
 }
 
-
-
-
-
