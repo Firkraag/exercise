@@ -48,7 +48,7 @@ float_bits float_i2f(int i) {
 	else if (pos > 24 && pos < 32) {
 		frac = (i >> (pos - 24)) & 0x7fffff;
 		round_two_bits = (i >> (pos - 25)) & 0x3;
-		if (round_two_bits == 0x3)
+		if (round_two_bits == 0x3) {
 			if (frac == 0x7fffff) {
 				frac = 0;
 				exp = pos + 127;
@@ -57,6 +57,7 @@ float_bits float_i2f(int i) {
 				frac = frac + 1;
 				exp = pos + 126;
 			}
+		}
 	}
 	else if (pos == 32) 
 		return 0xcf000000;
@@ -66,7 +67,7 @@ float_bits float_i2f(int i) {
 }
 
 int main() {
-	int i;
 	
 	printf("0x%x\n", float_i2f(0x03fffffe));
+	return 0;
 }
