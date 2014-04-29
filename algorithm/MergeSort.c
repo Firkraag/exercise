@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//A version of merge procedure that stops once either array L or R has had  //all its elements copied back to A
 void Combine(int A[], int first, int inter, int end) {
 	int len1 = inter - first + 1;
 	int len2 = end - inter; 
@@ -48,9 +49,6 @@ void MergeSort(int A[], int first, int end) {
 	
 void main() {
 	int a[8] = {1,3,4,5,2,6,0,10};
-//		int a[2] = {4,3};
-//	int a[3] = {4, 3, 1};
-//	Combine(a, 0, 3, 5);
 	MergeSort(a, 0, 7);
 	printf("%d, %d, %d, %d, %d, %d, %d, %d\n", a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]);
 }	

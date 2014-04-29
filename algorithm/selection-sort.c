@@ -20,9 +20,10 @@ void SelectionSort(int *A, int n) {
 	}
 }
 
-void main() {
+int main() {
 	int A[6] = {6, 5, 5, 3, 100, 1};
 	
 	SelectionSort(A, 6);
 	printf("%d, %d, %d, %d, %d, %d\n", A[0], A[1], A[2], A[3], A[4], A[5]);
+	return 0;
 }
