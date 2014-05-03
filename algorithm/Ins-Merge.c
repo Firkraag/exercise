@@ -60,7 +60,6 @@ void MERGE(int A[], int first, int inter, int end)
 			A[k] = L[i++];
 		else
 			A[k] = R[j++];
-
 	}
 	free(L);
 	free(R);
