@@ -58,6 +58,5 @@ int main() {
 
         max = FIND_MAXIMUM_SUBARRAY(a, 0, 16);
         printf("%d, %d, %d, %d, %d\n", max.low, max.high, max.sum, a[max.low], a[max.high]);
+		return 0;
 }
-
-			

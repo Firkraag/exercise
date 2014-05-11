@@ -31,8 +31,8 @@ int BinSearch(int A[], int first, int end, int x)
 void InsSort(int a[], int n)
 {
 	int i, j;
-	int tmp;
 	int pos;
+
 	 for (i = 1; i < n; i++)
 	{
 		pos = BinSearch(a, 0, i - 1, a[i]);
@@ -41,11 +41,11 @@ void InsSort(int a[], int n)
 	}
 }
 
-void main()
+int main()
 {
 	int a[7] = { 31, 101, 59, 26, 0, 61, 58 };
 
 	InsSort(a, 7);
 	printf("%d,%d,%d,%d,%d,%d,%d\n", a[0], a[1], a[2], a[3], a[4], a[5], a[6]);
-//	printf("%d\n", BinSearch(a, 0, 5, 500));
+	return 0;
 }
