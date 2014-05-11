@@ -90,6 +90,7 @@ int main()
 		a[i] = 77 - i;
 	MergeSort(a, 77, 9);
 	for (i = 0; i < 77; i++)
-		printf("%d  ", a[i]);
+		printf("%d\t", a[i]);
+	printf("\n");
 	return 0;
 }

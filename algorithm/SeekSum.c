@@ -44,9 +44,9 @@ void SeekSum(int A[], int first, int end, int x) {
 }			
 			 
 
-void main() {
+int main() {
 	int A[10] = {10,2,3,4,15,6,70,7,8,8};
 	
 	SeekSum(A, 0, 9, 15);
-//  printf("%d\n", BinSearch(A, 4,4, 5));
+	return 0;
 }	
