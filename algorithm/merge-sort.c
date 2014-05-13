@@ -38,9 +38,10 @@ void merge_sort(int a[], int start, int end) {
 	}
 }
 
-void main() {
+int main() {
       int a[8] = {1,3,4,5,2,6,0,10};
 
       merge_sort(a, 0, 7);
       printf("%d, %d, %d, %d, %d, %d, %d, %d\n", a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]);
+	return 0;
 } 

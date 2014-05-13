@@ -1,5 +1,4 @@
-//* This program uses insertion sort within merge sort when subproblems
-//* become sufficiently small
+//* Divide and conquer version of Ins-Merge
 				// MERGE(A, p, q, r)
 	// n1 = q - p + 1
 	// n2 = r - q
@@ -67,20 +66,17 @@ void MERGE(int A[], int first, int inter, int end)
 	free(R);
 }
 
-void MergeSort(int A[], int n, int length)
+void MergeSort(int A[], int start, int end, int length)
 {
-	int num = n / length;
-	int last_length = n - (num - 1) * length;
-	int i;
-
-	for (i = 1; i < num; i++)
-	{
-		InsSort(A + (i - 1) * length, length);
-		if (i > 1)
-			MERGE(A, 0 , (i - 1) * length - 1, i * length - 1);
+	if ((end - start + 1) > length) {
+		int middle = (start + end) / 2;
+		
+		MergeSort(A, start, middle, length);
+		MergeSort(A, middle + 1, end, length);
+		MERGE(A, start, middle, end);
 	}
-	InsSort(A + (i - 1) * length, last_length);
-	MERGE(A, 0, (i - 1) * length - 1, n - 1);
+	else 
+		InsSort(A + start, end - start + 1);			
 }
 
 int main()
@@ -90,7 +86,7 @@ int main()
 
 	for (i = 0; i < 77; i++)
 		a[i] = 77 - i;
-	MergeSort(a, 77, 9);
+	MergeSort(a, 1, 8, 9);
 	for (i = 0; i < 77; i++)
 		printf("%d\t", a[i]);
 	printf("\n");
