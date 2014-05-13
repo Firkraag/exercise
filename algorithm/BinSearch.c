@@ -1,4 +1,3 @@
-#include <stdio.h>
 //BinSearch(A, first, end, x)
 //	while length >= 0
 //		inter = (first + end) / 2
