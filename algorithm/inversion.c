@@ -49,9 +49,7 @@ void combine(int B[], int first, int inter, int end)
 			B[k] = L[i++];
 		else {
 			B[k] = R[j++];
-			printf("%d, %d, %d\n", invs, inter, i);
 			invs = invs + len1 - i;
-			printf("%d, %d\n", invs, L[i]);
 		}
 
 	}
