@@ -22,7 +22,7 @@
 	// j = j + 1
 static int invs = 0;
 
-void MERGE(int A[], int first, int inter, int end)
+void combine(int B[], int first, int inter, int end)
 {
 	int len1 = inter - first + 1;
 	int len2 = end - inter;
@@ -35,9 +35,9 @@ void MERGE(int A[], int first, int inter, int end)
 	L = (int *)calloc(len1 + 1, sizeof(int));
 	R = (int *)calloc(len2 + 1, sizeof(int));
 	for (i = 0; i < len1; i++)
-		L[i] = A[first + i];
+		L[i] = B[first + i];
 	for (j = 0; j < len2; j++)
-		R[j] = A[inter + j + 1];
+		R[j] = B[inter + j + 1];
 	L[len1] = INT_MAX;
 	R[len2] = INT_MAX;
 
@@ -46,9 +46,9 @@ void MERGE(int A[], int first, int inter, int end)
 	for (k = first; k <= end; k++)
 	{
 		if (L[i] <= R[j])
-			A[k] = L[i++];
+			B[k] = L[i++];
 		else {
-			A[k] = R[j++];
+			B[k] = R[j++];
 			printf("%d, %d, %d\n", invs, inter, i);
 			invs = invs + len1 - i;
 			printf("%d, %d\n", invs, L[i]);
@@ -59,29 +59,27 @@ void MERGE(int A[], int first, int inter, int end)
 	free(R);
 }
 
-void MergeSort(int A[], int first, int end)
+void divide(int B[], int first, int end)
 {
 	if (first < end)
 	{
 		int middle = (first + end) / 2;
 
-		MergeSort(A, first, middle);
-		MergeSort(A, middle + 1, end);
-		MERGE(A, first, middle, end);
+		divide(B, first, middle);
+		divide(B, middle + 1, end);
+		combine(B, first, middle, end);
 	}
 }
 
-int main()
-{
-	int a[100];
+int inversion(int A[], int first, int end) {
 	int i;
-	// int a[2] = {4,3};
-	// int a[3] = {4, 3, 1};
-//	MERGE(a, 3, 5, 7);
-   for (i = 0; i < 100; i++ )
-       a[i] = 100 - i;
-    MergeSort(a, 0, 99);
-	printf("%d, %d, %d, %d, %d, %d, %d, %d, %d\n", a[0], a[1], a[2], a[3], a[4],
-		   a[5], a[6], a[7], invs);
-	return 0;
+	int *B = (int *) calloc(end - first + 1, sizeof(int));
+
+	for (i = first; i <= end; i++)
+		B[i] = A[i];
+	divide(B, first, end);
+	free(B);
+	i = invs;
+	invs = 0;
+	return i;
 }
