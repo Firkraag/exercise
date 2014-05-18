@@ -1,5 +1,5 @@
 // This program determines the number of inversions in 
-// any permution on n elements
+// any permution on n elements using a global variable invs
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -46,9 +46,7 @@ void combine(int B[], int first, int inter, int end)
 	for (k = first; k <= end; k++)
 	{
 		if (L[i] <= R[j])
-			B[k] = L[i++];
-		else {
-			B[k] = R[j++];
+			B[k] = L[i++]; else { B[k] = R[j++];
 			invs = invs + len1 - i;
 		}
 
@@ -63,7 +61,7 @@ void divide(int B[], int first, int end)
 	{
 		int middle = (first + end) / 2;
 
-		divide(B, first, middle);
+	    divide(B, first, middle);
 		divide(B, middle + 1, end);
 		combine(B, first, middle, end);
 	}
