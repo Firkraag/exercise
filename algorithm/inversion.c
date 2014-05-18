@@ -22,7 +22,7 @@
 	// j = j + 1
 static int invs = 0;
 
-void combine(int B[], int first, int inter, int end)
+static void combine(int B[], int first, int inter, int end)
 {
 	int len1 = inter - first + 1;
 	int len2 = end - inter;
@@ -55,7 +55,7 @@ void combine(int B[], int first, int inter, int end)
 	free(R);
 }
 
-void divide(int B[], int first, int end)
+static void divide(int B[], int first, int end)
 {
 	if (first < end)
 	{

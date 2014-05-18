@@ -12,18 +12,18 @@ struct value {
 //	sum = A[low]
 //	left = low
 //	right = high
-//	max-prev-sum = NEGATIVE INFINITE
+//	max-endpoint-sum = NEGATIVE INFINITE
 //	for i = low to high
-//		if max-prev-sum >= 0
-//			max-prev-sum = max-prev-sum + A[i]
-//			max-prev-high = i
+//		if max-endpoint-sum >= 0
+//			max-endpoint-sum = max-endpoint-sum + A[i]
+//			max-endpoint-high = i
 //		else
-//			max-prev-sum = A[i]	
-//			max-prev-low = max-prev-high = i
-//		if max-prev-sum > sum
-//			sum = max-prev-sum
-//			left = max-prev-low
-//			right = max-prev-high
+//			max-endpoint-sum = A[i]	
+//			max-endpoint-low = max-endpoint-high = i
+//		if max-endpoint-sum > sum
+//			sum = max-endpoint-sum
+//			left = max-endpoint-low
+//			right = max-endpoint-high
 //	return(left, right, sum)			
 struct value FIND_MAXIMUM_SUBARRAY(int A[], int low, int high) {
 	struct value max_endpoint, max; 
