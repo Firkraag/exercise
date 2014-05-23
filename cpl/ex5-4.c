@@ -15,8 +15,10 @@ int strend(char *s, char *t) {
 	return 1;
 }
 
-main() {
-	char s[30] = "abcdef";
-	char t[10] = "def";
+int main() {
+	char s[] = "abcdef";
+	char t[] = "ef";
+	
 	printf("%d\n", strend(s, t));
+	return 0;
 }
