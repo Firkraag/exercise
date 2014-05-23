@@ -8,8 +8,9 @@
 //input is not a number, and a positive value if the input contains valid 
 //number.
 //A fix to getint in the K&R book. When encountering a + or - not followed 
-//by a digit as a valid representation of zero, push such a character back
-//on the input
+//by a digit, it is no longer treated as a valid representation of zero, 
+//instead push such a character back on the input and return 0,
+//meaning that the next input + or - is not a number
 int getint(int *pn) {
 	int c, sign;
 	int tmp;
