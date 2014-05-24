@@ -9,8 +9,9 @@ int leftmost_one_pos(unsigned x) {
 	int low = 0;
 	int middle;
 	int result;
+	int length = high - low;
 
-	while (low <= high) {
+	while (length >= 0) {
 		middle = (low + high) / 2;
 		result = x >> middle;
 		if (result == 0x1)
@@ -19,7 +20,9 @@ int leftmost_one_pos(unsigned x) {
 			low = middle + 1;
 		else
 			high = middle - 1;
+		length = high - low;
 	}
+	return -1;
 }
 
 /* Compute (float) i */
@@ -67,7 +70,12 @@ float_bits float_i2f(int i) {
 }
 
 int main() {
-	
+	int i;
+
+	for (i = 0; i < 32; i++) 
+		printf("%d\t", leftmost_one_pos(1 << i));
+	printf("\n");
 	printf("0x%x\n", float_i2f(0x03fffffe));
+	printf("0x%x\n", float_i2f(0x0));
 	return 0;
 }

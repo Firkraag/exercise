@@ -21,7 +21,7 @@ int strcmp1(char *s, char *t, int n) {
 			return 0;
 	return *s - *t;
 }
-main() {
+int main() {
 	char s[30];
 	char t[30] = "abcdefghibdafj";
 	strncpy1(s, t, 10);
@@ -33,6 +33,6 @@ main() {
 	strncat1(a, b, 30);
 	printf("%s,%d\n", a, strcmp1(a,b,5));
 	printf("%d\n", strcmp1("abc", "dbc", 5));
-
+	return 0;
 }
 
