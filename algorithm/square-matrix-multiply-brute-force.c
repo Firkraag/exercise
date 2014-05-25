@@ -1,5 +1,6 @@
-// Author: WangQiang
-// Date:   20140524
+// AUTHOR: WangQiang
+// DATE:   20140524
+// LAST UPDATE DATE: 20140524
 // EMAIL:  cntqrxj@gmail.com
 
 #include <stdio.h>
@@ -25,60 +26,51 @@ void square_matrix_multiply(int *a, int *b, int *c, int n) {
 				*(c + i * n + j) = *(c + i * n + j) + *(a + i * n + k) * *(b + k * n + j);
 		}
 }
-/* pow: comput x^n; return value: x ^ n */
-void matrix_exp(int *A, int *B, int n, int exp) {
-	if (n == 0)
-		return;
-	if (n % 2)
-		return pow1(x * x, n/2) * x;
-	else
-		return pow1(x * x, n/2);
-}
 
-int main() {
-	int d[4] = {1, 3, 7, 5};
-	int e[4] = {6, 8, 4, 2};
-	int f[4];
-	int A[16] = {-1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1};
-	int B[16], C[16];
-	int i, j;
-
-	square_matrix_multiply(d, e, f, 2);
-	printf("Matrix d:\n");
-	for (i = 0; i < 2; i++) {
-		for (j = 0; j < 2; j++)
-			printf("%d\t", *(d + 2 * i + j));
-		printf("\n");
-	}
-	printf("\n");
-	printf("Matrix e:\n");
-	for (i = 0; i < 2; i++) {
-		for (j = 0; j < 2; j++)
-			printf("%d\t", *(e + 2 * i + j));
-		printf("\n");
-	}
-	printf("\n");
-	printf("The result of matrix multiply d * e:\n");
-	for (i = 0; i < 2; i++) {
-		for (j = 0; j < 2; j++)
-			printf("%d\t", *(f + 2 * i + j));
-		printf("\n");
-	}
-	square_matrix_multiply(A, A, B, 4);
-	square_matrix_multiply(A, B, C, 4);
-	square_matrix_multiply(C, C, B, 4);
-	printf("Matrix A:\n");
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 4; j++)
-			printf("%d\t", *(A + 4 * i + j));
-		printf("\n");
-	}
-	printf("\n");
-	printf("The result is:\n");
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 4; j++)
-			printf("%d\t", *(B + 4 * i + j));
-		printf("\n");
-	}
-	return 0;
-}
+//int main() {
+	//int d[4] = {1, 3, 7, 5};
+	//int e[4] = {6, 8, 4, 2};
+	//int f[4];
+	//int A[16] = {-1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1};
+	//int B[16], C[16];
+	//int i, j;
+//
+	//square_matrix_multiply(d, e, f, 2);
+	//printf("Matrix d:\n");
+	//for (i = 0; i < 2; i++) {
+		//for (j = 0; j < 2; j++)
+			//printf("%d\t", *(d + 2 * i + j));
+		//printf("\n");
+	//}
+	//printf("\n");
+	//printf("Matrix e:\n");
+	//for (i = 0; i < 2; i++) {
+		//for (j = 0; j < 2; j++)
+			//printf("%d\t", *(e + 2 * i + j));
+		//printf("\n");
+	//}
+	//printf("\n");
+	//printf("The result of matrix multiply d * e:\n");
+	//for (i = 0; i < 2; i++) {
+		//for (j = 0; j < 2; j++)
+			//printf("%d\t", *(f + 2 * i + j));
+		//printf("\n");
+	//}
+	//square_matrix_multiply(A, A, B, 4);
+	//square_matrix_multiply(A, B, C, 4);
+	//square_matrix_multiply(C, C, B, 4);
+	//printf("Matrix A:\n");
+	//for (i = 0; i < 4; i++) {
+		//for (j = 0; j < 4; j++)
+			//printf("%d\t", *(A + 4 * i + j));
+		//printf("\n");
+	//}
+	//printf("\n");
+	//printf("The result is:\n");
+	//for (i = 0; i < 4; i++) {
+		//for (j = 0; j < 4; j++)
+			//printf("%d\t", *(B + 4 * i + j));
+		//printf("\n");
+	//}
+	//return 0;
+//}
