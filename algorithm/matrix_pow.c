@@ -28,4 +28,3 @@ void matrix_exp(int *A, int *B, int n, int pow) {
 	free(C);
 	return;
 }
-
