@@ -27,13 +27,14 @@ void square_matrix_multiply(int *a, int *b, int *c, int n) {
 		}
 }
 
-//int main() {
+int main() {
 	//int d[4] = {1, 3, 7, 5};
 	//int e[4] = {6, 8, 4, 2};
 	//int f[4];
 	//int A[16] = {-1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1};
-	//int B[16], C[16];
-	//int i, j;
+	int A[16] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	int B[16], C[16];
+	int i, j;
 //
 	//square_matrix_multiply(d, e, f, 2);
 	//printf("Matrix d:\n");
@@ -56,7 +57,7 @@ void square_matrix_multiply(int *a, int *b, int *c, int n) {
 			//printf("%d\t", *(f + 2 * i + j));
 		//printf("\n");
 	//}
-	//square_matrix_multiply(A, A, B, 4);
+	square_matrix_multiply(A, A, B, 4);
 	//square_matrix_multiply(A, B, C, 4);
 	//square_matrix_multiply(C, C, B, 4);
 	//printf("Matrix A:\n");
@@ -67,10 +68,10 @@ void square_matrix_multiply(int *a, int *b, int *c, int n) {
 	//}
 	//printf("\n");
 	//printf("The result is:\n");
-	//for (i = 0; i < 4; i++) {
-		//for (j = 0; j < 4; j++)
-			//printf("%d\t", *(B + 4 * i + j));
-		//printf("\n");
-	//}
-	//return 0;
-//}
+	for (i = 0; i < 4; i++) {
+		for (j = 0; j < 4; j++)
+			printf("%d\t", *(B + 4 * i + j));
+		printf("\n");
+	}
+	return 0;
+}
