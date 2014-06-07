@@ -5,7 +5,6 @@
 # LAST UPDATE DATE: 20140603
 # EMAIL:  cntqrxj@gmail.com
 
-import os
 from numpy import *
 
 def matrix_multiply(A, B):
@@ -34,8 +33,9 @@ def matrix_multiply(A, B):
 	
 #A = array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
 #B = array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
-A = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-B = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-#A = array([[1, 2, 3], [4, 5, 6]])
-#B = array([[1, 2], [4, 5]])
+#A = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+#B = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+A = array([[1, 2, 3], [4, 5, 6]])
+B = array([[1, 2], [4, 5]])
 print matrix_multiply(A, B)
+#print dot(A, B)
