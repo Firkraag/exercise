@@ -1,13 +1,13 @@
 // AUTHOR: WangQiang
 // CREATE DATE:   20140704
-// LAST UPDATE DATE: 2014075
+// LAST UPDATE DATE: 20140707
 // EMAIL:  cntqrxj@gmail.com
 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 
-#define NUMBER '0'
+#define NUMBER '0' /* signal that a number was found */
 
 // pointer version of getline
 int getline1(char *s, int lim) {
