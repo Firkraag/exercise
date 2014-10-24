@@ -6,8 +6,8 @@ int gotodiff(int x, int y) {
 		goto y_g_x;
 	result = x - y;
 	goto done;
-      y_g_x:
+y_g_x:
 	result = y - x;
-      done:
+done:
 	return result;
-}
+
