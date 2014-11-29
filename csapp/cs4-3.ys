@@ -1,0 +1,52 @@
+		.pos 0
+init: 	irmovl Stack, %esp
+		irmovl Stack, %ebp
+		call Main
+		halt
+
+# Array of 4 elements
+		.align 4
+array:	.long 0xd
+		.long 0xc0
+		.long 0xb00
+		.long 0xa000	
+
+Main:	pushl %ebp 
+	rrmovl %esp,%ebp
+	irmovl $4,%eax	
+	pushl %eax		# Push 4
+	irmovl array,%edx
+	pushl %edx      	# Push array
+	call rSum		# Sum(array, 4)
+	rrmovl %ebp,%esp
+	popl %ebp
+	ret 
+
+	#int rSum(int *Start, int Count)
+rSum:
+	pushl	%ebx	
+	irmovl  $24, %ecx
+	subl    %ecx,%esp
+	mrmovl	32(%esp), %ebx	#Start
+	mrmovl	36(%esp), %edx	#Count
+	irmovl	$0, %eax	
+    andl    %edx, %edx
+	jle	End
+	irmovl  $1, %ecx
+	subl	%ecx, %edx
+	rmmovl	%edx, 4(%esp)
+	irmovl  $4, %eax
+	addl    %ebx, %eax
+	rmmovl	%eax, (%esp)
+	call	rSum
+	mrmovl  (%ebx), %ecx
+	addl	%ecx, %eax
+End:
+	irmovl  $24, %ecx
+	addl	%ecx, %esp
+	popl	%ebx
+	ret
+
+	.pos 0x1000
+Stack:
+
