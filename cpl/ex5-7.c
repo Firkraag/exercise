@@ -1,6 +1,6 @@
 // AUTHOR: WangQiang
 // CREATE DATE:   20140707
-// LAST UPDATE DATE: 20140707
+// LAST UPDATE DATE: 20140709
 // EMAIL:  cntqrxj@gmail.com
 
 #include <stdio.h>
@@ -21,24 +21,28 @@ int getline1(char *s, int lim) {
 } 
 
 /* readlines: read input lines */
+/* This procedure store lines in an array supplied by main */
+/* Return -1 when too many lines are presented */
+/* Return -2 when the array supplied by the main routine is not big enough   to hold the input */
+/* Otherwise, return number of lines of input */
 //We suppose content[sizes] is big enough to hold the input. What will happen if the input is too big is undefined, so be cautious not to exceed the limit
 int readlines(char content[], int sizes, char *lineptr[], int maxlines)	{
-	int len, nlines;
-//	int maxlines = sizes / MAXLEN;
+	int nlines;
+	int len = 0;
 
 	nlines = 0;
-	while ((len = getline1(content, MAXLEN)) > 0)
+	while ((sizes -= len) >= (MAXLEN + 1) && (len = getline1(content, MAXLEN)) > 0)
 		if (++nlines >= maxlines)
 			return -1;
 		else {
 			*lineptr++ = content;
-			content[len - 1] = '\0';	
+			content[len - 1] = '\0';	/* delete newline */	
 			content += len;
-//			line[len-1] = '\0'; /* delete newline */
-//			strcpy(p, line);
-//			lineptr[nlines++] = p;
 		}
-	return nlines;
+	if (sizes <= MAXLEN)	//It means the array supplied by 
+		return -2;	//the main routine is not big enough
+	else
+		return nlines;
 }
 
 /* writelines: write output lines */
