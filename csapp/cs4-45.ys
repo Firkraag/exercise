@@ -13,7 +13,7 @@ array:	.long 0xa
 		.long 0x2
 		.long 0x3
 		.long 0x4
-		.long 0x5
+		.long 0x111
 		.long 0x6
 		.long 0x7
 		.long 0x8
@@ -38,40 +38,38 @@ Main:	pushl %ebp
 		ret
 
 bubble_a:
-		pushl	%esi
-		pushl	%ebx
-		mrmovl	12(%esp), %edx
-		mrmovl	16(%esp), %esi
+		mrmovl	4(%esp), %edx
+		mrmovl	8(%esp), %esi
 		irmovl  $1, %eax
 		subl	%eax, %esi
-		andl    %esi, %esi
 		jg  Inner	
 		jmp	End
 Loop:
 		rrmovl %eax, %edi
 		addl   %edi, %edi
-		addl   %edi, %edi
-		addl   %edx, %edi
-		mrmovl (%edi), %ebx
-		mrmovl 4(%edi), %ecx
-		pushl %edi
+		addl   %edi, %edi // %edi = 4i
+		addl   %edx, %edi // data + 4i
+		mrmovl (%edi), %ebx // %ebx = data[i]
+		mrmovl 4(%edi), %ecx // %ecx = data[i + 1]
 		rrmovl %ecx, %edi
 		subl    %ebx, %edi
-		popl %edi
 		jge	Test
+
+//calculate data + 4i again
+		rrmovl %eax, %edi
+		addl   %edi, %edi
+		addl   %edi, %edi // %edi = 4i
+		addl   %edx, %edi // data + 4i
 		rmmovl %ebx, 4(%edi)
 		rmmovl %ecx, (%edi)
 
-Test:
-		pushl %edi
+Test:	// for (i = 0; i < last; i++)
 		irmovl $1, %edi
 		addl %edi, %eax
 		rrmovl %eax, %edi
 		subl %esi, %edi
-		popl %edi
 		jne	Loop
 Outer:
-		pushl %edi
 		irmovl $1, %edi	
 		subl   %edi, %esi
 		je	End
@@ -81,8 +79,6 @@ Inner:
 		jg  Loop	
 		jmp	Outer
 End:
-		popl	%ebx
-		popl	%esi
 		ret
 
 		.pos 0x300
