@@ -54,16 +54,16 @@ Loop:
 		rrmovl %ecx, %edi
 		subl    %ebx, %edi
 		rrmovl %ebx, %edi
-		cmovg  %ecx, %ebx
-		cmovg  %edi, %ecx	
+		cmovl  %ecx, %ebx
+		cmovl  %edi, %ecx	
 
 //calculate data + 4i again
 		rrmovl %eax, %edi
 		addl   %edi, %edi
 		addl   %edi, %edi // %edi = 4i
 		addl   %edx, %edi // data + 4i
-		rmmovl %ebx, 4(%edi)
-		rmmovl %ecx, (%edi)
+		rmmovl %ecx, 4(%edi)
+		rmmovl %ebx, (%edi)
 
 Test:	// for (i = 0; i < last; i++)
 		irmovl $1, %edi
