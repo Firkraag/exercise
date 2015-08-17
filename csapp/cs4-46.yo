@@ -1,0 +1,87 @@
+  0x000:              | 		.pos 0
+  0x000: 30f400030000 | init:	irmovl Stack, %esp
+  0x006: 30f500030000 | 		irmovl Stack, %ebp
+  0x00c: 8064000000   | 		call Main
+  0x011: 00           | 		halt
+                      | 
+  0x014:              | 		.align 4
+  0x014: 00010000     | array:	.long 0x100
+  0x018: 09000000     | 		.long 0x9
+  0x01c: 08000000     | 		.long 0x8
+  0x020: 07000000     | 		.long 0x7
+  0x024: 01000000     | 		.long 0x1
+  0x028: 02000000     | 		.long 0x2
+  0x02c: 03000000     | 		.long 0x3
+  0x030: 04000000     | 		.long 0x4
+  0x034: 11010000     | 		.long 0x111
+  0x038: 06000000     | 		.long 0x6
+  0x03c: 07000000     | 		.long 0x7
+  0x040: 08000000     | 		.long 0x8
+  0x044: 07000000     | 		.long 0x7
+  0x048: 07000000     | 		.long 0x7
+  0x04c: 06000000     | 		.long 0x6
+  0x050: 05000000     | 		.long 0x5
+  0x054: 04000000     | 		.long 0x4
+  0x058: 03000000     | 		.long 0x3
+  0x05c: 02000000     | 		.long 0x2
+  0x060: 01000000     | 		.long 0x1
+                      | 
+  0x064: a05f         | Main:	pushl %ebp
+  0x066: 2045         | 		rrmovl %esp, %ebp
+  0x068: 30f015000000 | 		irmovl $21, %eax
+  0x06e: a00f         | 		pushl %eax
+  0x070: 30f214000000 | 		irmovl array, %edx
+  0x076: a02f         | 		pushl %edx
+  0x078: 8082000000   | 		call bubble_a
+  0x07d: 2054         | 		rrmovl %ebp, %esp
+  0x07f: b05f         | 		popl %ebp
+  0x081: 90           | 		ret
+                      | 
+  0x082:              | bubble_a:
+  0x082: 502404000000 | 		mrmovl	4(%esp), %edx
+  0x088: 506408000000 | 		mrmovl	8(%esp), %esi
+  0x08e: 30f001000000 | 		irmovl  $1, %eax
+  0x094: 6106         | 		subl	%eax, %esi
+  0x096: 76f0000000   | 		jg  Inner	
+  0x09b: 7002010000   | 		jmp	End
+  0x0a0:              | Loop:
+  0x0a0: 2007         | 		rrmovl %eax, %edi
+  0x0a2: 6077         | 		addl   %edi, %edi
+  0x0a4: 6077         | 		addl   %edi, %edi // %edi = 4i
+  0x0a6: 6027         | 		addl   %edx, %edi // data + 4i
+  0x0a8: 503700000000 | 		mrmovl (%edi), %ebx // %ebx = data[i]
+  0x0ae: 501704000000 | 		mrmovl 4(%edi), %ecx // %ecx = data[i + 1]
+  0x0b4: 2017         | 		rrmovl %ecx, %edi
+  0x0b6: 6137         | 		subl    %ebx, %edi
+  0x0b8: 2037         | 		rrmovl %ebx, %edi
+  0x0ba: 2213         | 		cmovl  %ecx, %ebx
+  0x0bc: 2271         | 		cmovl  %edi, %ecx	
+                      | 
+                      | //calculate data + 4i again
+  0x0be: 2007         | 		rrmovl %eax, %edi
+  0x0c0: 6077         | 		addl   %edi, %edi
+  0x0c2: 6077         | 		addl   %edi, %edi // %edi = 4i
+  0x0c4: 6027         | 		addl   %edx, %edi // data + 4i
+  0x0c6: 401704000000 | 		rmmovl %ecx, 4(%edi)
+  0x0cc: 403700000000 | 		rmmovl %ebx, (%edi)
+                      | 
+  0x0d2:              | Test:	// for (i = 0; i < last; i++)
+  0x0d2: 30f701000000 | 		irmovl $1, %edi
+  0x0d8: 6070         | 		addl %edi, %eax
+  0x0da: 2007         | 		rrmovl %eax, %edi
+  0x0dc: 6167         | 		subl %esi, %edi
+  0x0de: 74a0000000   | 		jne	Loop
+  0x0e3:              | Outer:
+  0x0e3: 30f701000000 | 		irmovl $1, %edi	
+  0x0e9: 6176         | 		subl   %edi, %esi
+  0x0eb: 7302010000   | 		je	End
+  0x0f0:              | Inner:
+  0x0f0: 30f000000000 | 		irmovl	$0, %eax
+  0x0f6: 6266         | 		andl	%esi, %esi
+  0x0f8: 76a0000000   | 		jg  Loop	
+  0x0fd: 70e3000000   | 		jmp	Outer
+  0x102:              | End:
+  0x102: 90           | 		ret
+                      | 
+  0x300:              | 		.pos 0x300
+  0x300:              | Stack:

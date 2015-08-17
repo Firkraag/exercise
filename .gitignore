@@ -1,5 +1,8 @@
+.*
 *.s
 *.o
 *.pyc
 *.swp
 *.out
+test
+main

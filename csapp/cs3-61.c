@@ -15,7 +15,16 @@ int result = 0;
 void *Arow = (void *)&A[i][0];
 void *Bcol = (void *)&B[0][k];
 int N = 4 * n;
-for (j = 0; j < N; j += 4)
-result += *(int *)(Arow + j) * *(int *)(Bcol + N);
+for (j = 0; j < N; j += 4, Bcol += N)
+	result += *(int *)(Arow + j) * *(int *)Bcol;
 return result;
+}
+
+int main()
+{
+	int a[2][2] = {{1, 2}, {3, 4}};
+	int b[2][2] = {{1, 2}, {3, 4}};
+
+	printf("%d\n", var_prod_ele(2, a, b, 1, 0));
+	return 0;
 }

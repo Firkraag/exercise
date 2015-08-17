@@ -17,9 +17,7 @@ class heap(list):
 		if (r <= (self.__heap_size - 1)) and (self.__heap[r] > self.__heap[largest]):
 			largest = r
 		if 	largest != i:
-			tmp = self.__heap[i]
-			self.__heap[i] = self.__heap[largest]
-			self.__heap[largest] = tmp
+			self.__heap[i],self.__heap[largest] = self.__heap[largest],self.__heap[i]
 			self.max_heapify(largest)
 	def build_max_heap(self):
 		self.__heap_size = self.__length
@@ -28,8 +26,6 @@ class heap(list):
 	def heapsort(self):
 		self.build_max_heap()
 		for i in range(self.__length - 1, 0, -1):
-			tmp  = self.__heap[0]
-			self.__heap[0] = self.__heap[i]
-			self.__heap[i] = tmp
+			self.__heap[0],self.__heap[i] = self.__heap[i],self.__heap[0]
 			self.__heap_size = self.__heap_size - 1
 			self.max_heapify(0)

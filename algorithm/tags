@@ -1,0 +1,87 @@
+BinSearch	BinSearch.c	/^int BinSearch(int A[], int first, int end, int x) /
+BinSearch	InsSort-BinSearch.c	/^int BinSearch(int A[], int first, int end, int x)$/
+BinSearch	SeekSum.c	/^int BinSearch(int A[], int first, int end, int x) /
+BinaryAdd	BinaryAdd.c	/^void BinaryAdd(int a[], int b[], int n,int c[]) {$/
+BubbleSort	BubbleSort.c	/^void BubbleSort(int A[], int n) {$/
+Combine	MergeSort.c	/^void Combine(int A[], int first, int inter, int en/
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-brute-force.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-inline.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
+FIND_MAX_CROSSING_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAX_CROSSING_SUBARRAY(int A[], i/
+Horner	Horner.c	/^void Horner(int A[], int n, int x)  {$/
+InsSort	insertion-sort-rec.c	/^void InsSort(int A[], int n)$/
+InsSort	Ins-Merge2.c	/^void InsSort(int a[], int n)$/
+InsSort	Ins-Merge.c	/^void InsSort(int a[], int n)$/
+InsSort	InsSort-BinSearch.c	/^void InsSort(int a[], int n)$/
+InsSort	InsSort.c	/^void InsSort(int a[], int n)$/
+Insert	insertion-sort-rec.c	/^void Insert(int A[], int n)$/
+MBinSearch	BinSearch.c	/^void main() {$/
+MBinaryAdd	BinaryAdd.c	/^int main() {$/
+MBubbleSort	BubbleSort.c	/^int main() {$/
+MERGE	Ins-Merge2.c	/^void MERGE(int A[], int first, int inter, int end)/
+MERGE	Ins-Merge.c	/^void MERGE(int A[], int first, int inter, int end)/
+MHorner	Horner.c	/^int main() {$/
+MIns-Merge	Ins-Merge.c	/^int main()$/
+MIns-Merge2	Ins-Merge2.c	/^int main()$/
+MInsSort	InsSort.c	/^void main()$/
+MInsSort-BinSearch	InsSort-BinSearch.c	/^int main()$/
+MMergeSort	MergeSort.c	/^void main() {$/
+MSeekSum	SeekSum.c	/^int main() {$/
+Madd	add.c	/^int main() {$/
+Mbinsearch	binsearch.c	/^void main() {$/
+MergeSort	Ins-Merge2.c	/^void MergeSort(int A[], int start, int end, int le/
+MergeSort	Ins-Merge.c	/^void MergeSort(int A[], int n, int length)$/
+MergeSort	MergeSort.c	/^void MergeSort(int A[], int first, int end) {$/
+Minsertion-sort-rec	insertion-sort-rec.c	/^int main()$/
+Mmain	main.c	/^int main(int argc, char *argv[]) {$/
+Mmaximum-subarray-brute-force	maximum-subarray-brute-force.c	/^int main() {$/
+Mmaximum-subarray-inline	maximum-subarray-inline.c	/^int main() {$/
+Mmaximum-subarray-recursive	maximum-subarray-recursive.c	/^int main() {$/
+Mmerge-sort	merge-sort.c	/^int main() {$/
+Mselection-sort	selection-sort.c	/^int main() {$/
+Msquare-matrix-multiply-brute-force	square-matrix-multiply-brute-force.c	/^int main() {$/
+N	add.c	3
+RANK	square-matrix-multiply-brute-force2.c	8
+SeekSum	SeekSum.c	/^void SeekSum(int A[], int first, int end, int x) {/
+SelectionSort	selection-sort.c	/^void SelectionSort(int *A, int n) {$/
+binsearch	binsearch.c	/^int binsearch(int x, int v[], int n) {$/
+combine	inversion2.c	/^static int combine(int B[], int first, int inter, /
+combine	inversion.c	/^static void combine(int B[], int first, int inter,/
+divide	inversion2.c	/^int divide(int B[], int first, int end)$/
+divide	inversion.c	/^static void divide(int B[], int first, int end)$/
+fib	Fibonacci.c	/^int fib(int n) {$/
+gcd	gcd.c	/^ unsigned gcd(unsigned m, unsigned n) {$/
+high	maximum-subarray-brute-force.c	6
+high	maximum-subarray-inline.c	6
+high	maximum-subarray-recursive.c	6
+insertionsort	insertion-sort.c	/^void insertionsort(int s[], int length) {$/
+insertionsort	insertion-sort-noninc.c	/^void insertionsort(int s[], int length) {$/
+inversion	inversion2.c	/^int inversion(int A[], int first, int end) {$/
+inversion	inversion.c	/^int inversion(int A[], int first, int end) {$/
+invs	inversion.c	23
+low	maximum-subarray-brute-force.c	5
+low	maximum-subarray-inline.c	5
+low	maximum-subarray-recursive.c	5
+matrix_add	square-matrix-multiply-recursive.c	/^static void matrix_add(int *A, int *B, int *C, int/
+matrix_exp	matrix_pow.c	/^void matrix_exp(int *A, int *B, int n, int pow) {$/
+max_subsequence_sum	max_subsequence_sum.c	/^int max_subsequence_sum(int a[], unsigned n) {$/
+merge	merge-sort.c	/^void merge(int a[], int begin, int middle, int end/
+merge_sort	merge-sort.c	/^void merge_sort(int a[], int start, int end) {$/
+pow1	pow.c	/^int pow1(int x, unsigned n) {$/
+pow2	pow.c	/^int pow2(int x, unsigned n) {$/
+qsort	qsort.c	/^void qsort(int v[], int left, int right) {$/
+square_matrix_multiply	square-matrix-multiply-brute-force2.c	/^void square_matrix_multiply(int a[][RANK], int b[]/
+square_matrix_multiply	square-matrix-multiply-brute-force.c	/^void square_matrix_multiply(int *a, int *b, int *c/
+square_matrix_multiply	square-matrix-multiply-recursive.c	/^void square_matrix_multiply(int *A, int *B, int *C/
+submatrix_init	square-matrix-multiply-recursive.c	/^static void submatrix_init(int *S, int S_row, int /
+sum	maximum-subarray-brute-force.c	7
+sum	maximum-subarray-inline.c	7
+sum	maximum-subarray-recursive.c	7
+swap	Fibonacci.c	/^void swap(int *x, int *y) {$/
+swap	insertion-sort-rec.c	/^void swap(int *a, int *b)$/
+swap	InsSort-BinSearch.c	/^void swap(int *a, int *b)$/
+swap	qsort.c	/^void swap(int v[], int i, int j) {$/
+to_matrix	square-matrix-multiply-recursive.c	/^static void to_matrix(int *S, int S_row, int S_col/
+value	maximum-subarray-brute-force.c	4
+value	maximum-subarray-inline.c	4
+value	maximum-subarray-recursive.c	4

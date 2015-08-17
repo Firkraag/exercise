@@ -1,5 +1,5 @@
 // AUTHOR: WangQiang
-// DATE:   20140526
+// CREATE DATE:   20140526
 // LAST UPDATE DATE: 20140528
 // EMAIL:  cntqrxj@gmail.com
 
