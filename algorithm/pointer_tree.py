@@ -29,7 +29,6 @@ class pointer_tree(rb_tree):
 			if z.key <= x.key:
 				if z.key < x.minimum.key:
 					x.minimum = z
-
 				# update predecessor attribute of all z's ancestors except z's parent since z inherits the predecessor attribute of z's parent
 				if x.left != self.nil:
 					if z.key > x.predecessor.key:
@@ -141,48 +140,3 @@ class pointer_tree(rb_tree):
 			traverse = traverse.p
 		if y_original_color == 1:
 			self.delete_fixup(x)
-	def delete_fixup(self, x):
-		while x != self.root and x.color == 1:
-			if x == x.p.left:
-				w = x.p.right
-				if w.color == 0:
-					w.color = 1
-					x.p.color = 0
-					self.left_rotate(x.p)
-					w = x.p.right
-				if w.left.color == 1 and w.right.color == 1:
-					w.color = 0
-					x = x.p
-				else:
-					if w.left.color == 0 and w.right.color == 1:
-						w.left.color = 1
-						w.color = 0
-						self.right_rotate(w)
-						w = x.p.right
-					w.color = x.p.color
-					x.p.color = 1
-					w.right.color = 1
-					self.left_rotate(x.p)
-					x = self.root
-			else:
-				w = x.p.left
-				if w.color == 0:
-					w.color = 1
-					x.p.color = 0
-					self.right_rotate(x.p)
-					w = x.p.left
-				if w.left.color == 1 and w.right.color == 1:
-					w.color = 0
-					x = x.p
-				else:
-					if w.left.color == 1 and w.right.color == 0:
-						w.right.color = 1
-						w.color = 0
-						self.left_rotate(w)
-						w = x.p.left
-					w.color = x.p.color
-					w.left.color = 1
-					x.p.color = 1
-					self.right_rotate(x.p)
-					x = self.root
-		x.color = 1
