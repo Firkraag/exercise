@@ -16,7 +16,6 @@ class rb_tree(Tree):
 			for i in values:
 				self.insert(rb_node(i, None, None, None, 0))
 		else:
-			#self.root = argument
 			print "Not invalid argument"
 	def left_rotate(self, x):
 		y = x.right
