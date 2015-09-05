@@ -106,7 +106,6 @@ class os_tree(rb_tree):
 			traverse = traverse.p
 		if y_original_color == 1:
 			self.delete_fixup(x)
-	
 	def left_rotate(self, x):
 		y = x.right
 		x.right = y.left

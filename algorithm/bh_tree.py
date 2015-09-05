@@ -74,6 +74,7 @@ class bh_tree(rb_tree):
 					x.p.color = 1
 					w.right.color = 1
 					self.left_rotate(x.p)
+					w.bh = w.bh + 1
 					x = self.root
 			else:
 				w = x.p.left
