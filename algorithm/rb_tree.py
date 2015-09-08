@@ -17,6 +17,8 @@ class rb_tree(Tree):
 				self.insert(rb_node(i, None, None, None, 0))
 		else:
 			print "Not invalid argument"
+	def __getitem__(self, key):
+		return self.iterative_tree_search(key)
 	def left_rotate(self, x):
 		y = x.right
 		x.right = y.left

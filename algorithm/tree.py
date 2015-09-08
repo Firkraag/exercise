@@ -83,6 +83,8 @@ class Tree(object):
 				self.insert(Node(i, None, None, None))
 		else:
 			print "Not invalid argument"
+	def __getitem__(self, key):
+		return self.root.iterative_tree_search(key)
 	def insert(self, node):
 		y = None
 		x = self.root
