@@ -13,22 +13,9 @@ class TestGraph(unittest.TestCase):
 		u = Vertex('u')
 		y = Vertex('y')
 		z = Vertex('z')
-		for i in r,w:
-			s.addEdge(i)
-		for i in s,v:
-			r.addEdge(i)
-		v.addEdge(r)
-		for i in s,t, x:
-			w.addEdge(i)
-		for i in w, x, u:
-			t.addEdge(i)
-		for i in w, t, u, y:
-			x.addEdge(i)
-		for i in t, x, y:
-			u.addEdge(i)
-		for i in x, u:
-			y.addEdge(i)
-		g = Graph([v,r,s,w,t,x,u,y,z])
+		vertices = [v,r,s,w,t,x,u,y,z]
+		edges = [(s, r), (s, w), (r, v), (r, s), (v, r), (w, s), (w, t), (w, x), (t, w), (t, x), (t, u), (u, t), (u, x), (u, y), (x, w), (x, t), (x, u), (x, y), (y, x), (y, u)]
+		g = Graph(vertices, edges)
 		#g.printAllEdges()
 		#for i in g.vertices:
 		#	i.printEdge()
@@ -55,20 +42,9 @@ class TestGraph(unittest.TestCase):
 		#edges_list = [(z, w), (s, w), (y, w), (x, ), (x, ), (z, ), (v, u), (v, t)]
 		#vertices = (s, v, z, w, y, x, t, u)
 		#map(lambda vertex, edges: map(lambda vertex, edge: vertex.addEdge(edge), zip([vertex] * len(edges) , edges)),  zip(vertices, edges_list))
-		for i in z,w:
-			s.addEdge(i)
-		for i in s,w:
-			v.addEdge(i)
-		for i in y, w:
-			z.addEdge(i)
-		w.addEdge(x)
-		y.addEdge(x)
-		x.addEdge(z)
-		for i in v,u:
-			t.addEdge(i)
-		for i in t,v:
-			u.addEdge(i)
-		g = Graph([s, v, z, w, y, x, t, u])
+		vertices = [s, v, z, w, y, x, t, u]
+		edges = [(y, x), (x, z), (z, y), (z, w), (w, x), (s, z), (s, w), (v, w), (v, s), (t, v), (t, u), (u, v), (u, t)]
+		g = Graph(vertices, edges)
 		g.dfs()
 		vertices = (s, v, z, w, y, x, t, u)
 		for u in vertices:
@@ -90,24 +66,9 @@ class TestGraph(unittest.TestCase):
 		x = Vertex('x')		
 		y = Vertex('y')		
 		z = Vertex('z')		
-		for i in q,r,x:
-			m.addEdge(i)
-		for i in q, o, u:
-			n.addEdge(i)
-		for i in r,s,v:
-			o.addEdge(i)
-		for i in o, s, z:
-			p.addEdge(i)
-		q.addEdge(t)
-		for i in u, y:
-			r.addEdge(i)
-		s.addEdge(r)
-		u.addEdge(t)
-		for i in w, x:
-			v.addEdge(i)
-		w.addEdge(z)
-		y.addEdge(v)
-		g = Graph([m, n, o, p, q, r, s, t, u, v, w, x, y, z])
+		vertices = [m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+		edges = [(m, q), (m, r), (m, x), (n, q), (n, o), (n, u), (o, r), (o, s), (o, v), (p, o), (p, s), (p, z), (q, t), (r, u), (r, y), (s, r), (u, t), (v, w), (v, x), (w, z), (y, v)]
+		g = Graph(vertices, edges)
 		self.assertEquals(g.path_num(m, v), 1)
 		self.assertEquals(g.path_num(n, v), 3)
 		self.assertEquals(g.path_num(o, v), 3)
@@ -122,3 +83,133 @@ class TestGraph(unittest.TestCase):
 		self.assertEquals(g.path_num(x, v), 0)
 		self.assertEquals(g.path_num(y, v), 1)
 		self.assertEquals(g.path_num(z, v), 0)
+	def testSCC(self):
+		a = Vertex('a')		
+		b = Vertex('b')		
+		c = Vertex('c')		
+		d = Vertex('d')		
+		e = Vertex('e')		
+		f = Vertex('f')		
+		g = Vertex('g')		
+		h = Vertex('h')		
+		vertices = [a, b, c, d, e, f, g, h]
+		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
+		G = Graph(vertices, edges)
+		G.strongly_connected_components()
+		self.assertEquals(a.cc, 1)
+		self.assertEquals(b.cc, 1)
+		self.assertEquals(c.cc, 2)
+		self.assertEquals(d.cc, 2)
+		self.assertEquals(e.cc, 1)
+		self.assertEquals(f.cc, 3)
+		self.assertEquals(g.cc, 3)
+		self.assertEquals(h.cc, 4)
+	def testSimplified(self):
+		a = Vertex('a')		
+		b = Vertex('b')		
+		c = Vertex('c')		
+		d = Vertex('d')		
+		e = Vertex('e')		
+		f = Vertex('f')		
+		g = Vertex('g')		
+		h = Vertex('h')		
+		vertices = [a, b, c, d, e, f, g, h]
+		#edges = [(a, c), (b, a), (d, h), (d, f), (e, a), (a, b), (b, c), (d, c), (c, d), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
+		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
+		G = Graph(vertices, edges)
+		s = G.simplified()
+		for u in s.vertices:
+			print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
+			s.printEdge(u)
+		a = Vertex('a')	
+		b = Vertex('b')	
+		c = Vertex('c')	
+		d = Vertex('d')	
+		e = Vertex('e')	
+		f = Vertex('f')	
+		vertices = [a, b, c, d, e, f]
+		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (c, e), (b, e), (d, f), (e, f), (f, e)]
+		G = Graph(vertices, edges)
+		s = G.simplified()
+		for u in s.vertices:
+			print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
+			s.printEdge(u)
+	def testComponentGraph(self):
+		a = Vertex('a')		
+		b = Vertex('b')		
+		c = Vertex('c')		
+		d = Vertex('d')		
+		e = Vertex('e')		
+		f = Vertex('f')		
+		g = Vertex('g')		
+		h = Vertex('h')		
+		vertices = [a, b, c, d, e, f, g, h]
+		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (d, h), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
+		G = Graph(vertices, edges)
+		cg = G.component_graph()
+		print "www"
+		print
+		for u in cg.vertices:
+			print "u.key: {}".format(u.key)	
+			cg.printEdge(u)
+		a = Vertex('a')	
+		b = Vertex('b')	
+		c = Vertex('c')	
+		d = Vertex('d')	
+		e = Vertex('e')	
+		f = Vertex('f')	
+		vertices = [a, b, c, d, e, f]
+		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (c, e), (b, e), (d, f), (e, f), (f, e)]
+		G = Graph(vertices, edges)
+		cg = G.component_graph()
+		print "www"
+		print
+		for u in cg.vertices:
+			print "u.key: {}".format(u.key)	
+			cg.printEdge(u)
+	def testSemiconnected(self):
+		a = Vertex('a')		
+		b = Vertex('b')		
+		c = Vertex('c')		
+		d = Vertex('d')		
+		e = Vertex('e')		
+		f = Vertex('f')		
+		g = Vertex('g')		
+		h = Vertex('h')		
+		vertices = [a, b, c, d, e, f, g, h]
+		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (d, h), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), True)
+		a = Vertex('a')	
+		b = Vertex('b')	
+		c = Vertex('c')	
+		d = Vertex('d')	
+		e = Vertex('e')	
+		f = Vertex('f')	
+		vertices = [a, b, c, d, e, f]
+		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (c, e), (b, e), (d, f), (e, f), (f, e)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), True)
+		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (e, f)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), False)
+		abe = Vertex('abe')	
+		cd = Vertex('cd')	
+		fg = Vertex('fg')	
+		h =  Vertex('h')	
+		vertices = [abe, cd, fg, h]
+		edges = [(abe, fg), (abe, cd), (fg, h), (cd, h), (cd, fg)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), True)
+		edges = [(abe, fg), (abe, cd), (fg, h), (cd, h)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), False)
+		edges = [(abe, fg), (abe, cd), (cd, h), (cd, fg)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), False)
+		edges = [(abe, fg), (abe, cd), (fg, h), (cd, fg)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), True)
+		edges = [(abe, cd), (fg, h), (cd, fg)]
+		G = Graph(vertices, edges)
+		self.assertEquals(G.semiconnected(), True)
