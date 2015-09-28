@@ -52,6 +52,27 @@ class Graph(object):
 					v.p = u
 					q.enqueue(v)
 			u.color = 2
+	def dfs(self):
+		global time
+		for u in self.vertices:
+			u.color = 0
+			u.p = None
+		time = 0
+		for u in self.vertices:
+			if u.color == 0:
+				self.dfs_visit(u)
+	def dfs_visit(self, u):
+		global time
+		time = time + 1
+		u.d = time
+		u.color = 1
+		for v in u.edges:
+			if v.color == 0:
+				v.p = u
+				self.dfs_visit(v)
+		u.color = 2
+		time = time + 1
+		u.f = time
 	def printVertices(self):
 		for u in self.vertices:
 			print "key : {}, distance: {}".format(u.key, u.d)
@@ -59,19 +80,43 @@ class Graph(object):
 		self.status = dict()
 		s = next(iter(self.vertices))
 		print "key of s is {}".format(s.key)
-		self.bfs(s)
 		self.printAllEdges_aux(s)
 	def printAllEdges_aux(self, u):
 		for v in u.edges:
-			if v.p == u:
+			try:
+				status = self.status[(u, v)]
+			except KeyError:
+				self.status[(u, v)] = 1
 				self.status[(v, u)] = 1
 				print (u, v)
 				self.printAllEdges_aux(v)
 				print (v, u)
-			else:
-				try:
-					status = self.status[(u, v)]
-				except KeyError:
-					self.status[(v, u)] = 1
-					print (u, v)
-					print (v, u)
+	def path_num(self, s, t):
+		for u in self.vertices:
+			u.color = 0
+			u.num = 0
+		t.color = 2
+		t.num = 1
+		return self.path_num_aux(s, t)
+	def path_num_aux(self, s, t):
+		s.color = 1
+		for v in s.edges:
+			if v.color == 2:
+				s.num = s.num + v.num
+			elif v.color == 0:
+				s.num = s.num + self.path_num_aux(v, t)
+		s.color = 2
+		return s.num
+	def simplified(self):
+		'''create a simplified graph that has the same strong
+		connected components and component graph as G and that is as small 
+		as possible'''
+		self.dfs()
+		t = self.transpose()
+		t.simplified_aux()
+	def simplified_aux(self):
+		s = Graph()
+		for u in self.vertices:
+			u.color = 0
+			u.p = None
+		
