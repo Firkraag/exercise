@@ -1,5 +1,171 @@
 from queue import queue
+#from priority_queue import min_priority_queue
+from disjoint_sets_forest import node as dsf_node
+import math
 
+#class vEB_node(object):
+#	def __init__(self, u):
+#		self.u = u
+#		self.min = None
+#		self.max = None
+#		self.min_value = None
+#		self.max_value = None
+#		self.size = 0
+#		if u > 2:
+#			self.root = int(math.sqrt(u))
+#			self.cluster = [0] * self.root
+#			self.summary = vEB_node(self.root)
+#			for i in range(0, self.root):
+#				self.cluster[i] = vEB_node(self.root)
+#	def high(self, x):
+#		return x.weight / self.root
+#	def low(self, x):
+#		return x.weight % self.root
+#	def index(self, x, y):
+#		return x.weight * self.root + y.weight
+#	def member(self, x):
+#		if x in self.min or y in self.max:
+#			return True
+#		elif self.u == 2:
+#			return False
+#		else:
+#			return self.cluster[self.high(x)].member(self.low(x))
+#	def empty_tree_insert(self, x):
+#		self.min =	x 
+#		self.max = x
+#		self.min_value = x.weight
+#		self.max_value = x.weight
+#	def insert(self, s):
+#		if self.size == 0:
+#			self.empty_tree_insert(s)
+#		else:
+#			x = iter(s).next()
+#			if self.u == 2:
+#				if self.min_value == self.max_value:
+#					if x.weight < self.min_value:
+#						self.min = s
+#						self.min_value = x.weight
+#					elif x.weight == self.min_value:
+#						self.min = self.min.union(s)
+#					else:
+#						self.max = s
+#						self.max_value = x.weight
+#				elif self.min_value < self.max_value:
+#					if x.weight == self.min_value:
+#						self.min = self.min.union(s)
+#					else:
+#						self.max = self.max.union(s)
+#				self.size = self.size + 1
+#			if self.u > 2:
+#				if x.weight < self.min_value:
+#					self.min,x = x,self.min 
+#				if self.cluster[self.high(x)].size == 0:
+#					self.summary.insert({self.high(x)})
+#					self.cluster[self.high(x)].empty_tree_insert({self.low(x)})
+#				else:
+#					self.cluster[self.high(x)].insert(self.low(x))
+#				if x > self.max:
+#					self.max.clear()
+#					self.max.add(x)
+#		self.size = self.size + 1
+#	def _insert_min_elements(self, s):
+#		if self.size == 0:
+#			self.min = s
+#		else:
+#			self.cluster[self.high(iter(s).next())]._insert_min_elements(self.min)
+#			self.min = s
+#	def delete(self, x):
+#		print "u = {}, x = {}".format(self.u, x)
+#		if self.min == self.max:
+#			print "min = {}, max = {}".format(self.min, self.max)
+#			if x == self.min:
+#				self.min = None
+#				self.max = None
+#		elif self.u == 2:
+#			if x == 0:
+#				self.min = 1
+#			else:
+#				self.max = 0
+#		elif x < self.min:
+#			return
+#		else:
+#			if x == self.min:
+#				first_cluster = self.summary.min
+#				x = self.index(first_cluster, self.cluster[first_cluster].min)
+#				self.min = x
+#			self.cluster[self.high(x)].delete(self.low(x))
+#			if self.cluster[self.high(x)].min == None:
+#				self.summary.delete(self.high(x))
+#				if x == self.max:
+#					summary_max = self.summary.max
+#					if summary_max == None:
+#						self.max = self.min
+#					else:
+#						self.max = self.index(summary_max, self.cluster[summary_max].max)
+#			elif x == self.max:
+#				self.max = self.index(self.high(x), self.cluster[self.high(x)].max)
+#		self.size = self.size - 1
+class min_heap(list):
+	def __init__(self, data):
+		list.__init__(self, data)
+		for i in range(0, len(data)):
+			self[i].index = i
+		self.length = len(data)
+		self.heap_size = self.length
+		self.build_min_heap()
+	def __contains__(self, y):
+		return y in self[0:self.heap_size]
+	def left(self, i):
+		return 2 * i + 1
+	def right(self, i):
+		return 2 * i + 2
+	def parent(self, i):
+		return (i - 1) / 2
+	def min_heapify(self, i):
+		l = self.left(i)
+		r = self.right(i)
+		if (l <= (self.heap_size - 1)) and (self[l].weight < self[i].weight):
+			smallest = l
+		else:
+			smallest = i
+		if (r <= (self.heap_size - 1)) and (self[r].weight < self[smallest].weight):
+			smallest = r
+		if 	smallest != i:
+			self[i],self[smallest] = self[smallest],self[i]
+			self[i].index = i
+			self[smallest].index = smallest
+			self.min_heapify(smallest)
+	def build_min_heap(self):
+		self.heap_size = self.length
+		for i in range(self.length / 2 - 1, -1, -1):
+			self.min_heapify(i)
+class min_priority_queue(min_heap):
+	def heap_minimum(self):
+		return self[0]
+	def heap_extract_min(self):
+		if self.heap_size < 1:
+			sys.exit("heap underflow")
+		minimum = self[0]
+		self[0] = self[self.heap_size - 1]
+		self[0].index = 0
+		self.heap_size = self.heap_size - 1
+		self.min_heapify(0)
+		return minimum
+	def heap_decrease_key(self, i, key):
+		if key > self[i].weight:
+			sys.exit("new key is larger than current key")
+		self[i].weight = key
+		while i > 0 and self[self.parent(i)].weight > self[i].weight:
+			self[i],self[self.parent(i)] = self[self.parent(i)], self[i]
+			self[i].index = i
+			self[self.parent(i)].index = self.parent(i)
+			i = self.parent(i)
+	def min_heap_insert(self, key):
+		if self.heap_size >= self.length:
+			sys.exit("heap overflow")
+		self.heap_size = self.heap_size + 1
+		self[self.heap_size - 1].weight = float("Inf")
+		self.heap_decrease_key(self.heap_size - 1, key)
 class Vertex(object):
 	def __init__(self, key):
 		self.key = key
@@ -16,14 +182,23 @@ class Vertex(object):
 			self.print_path(v.p)
 			print v,
 class Graph(object):
-	def __init__(self, vertices = tuple(), edges = tuple()):
+	def __init__(self, vertices = tuple(), edges = tuple(), directed = True):
+		self.directed = directed
 		self.vertices = set(vertices)
+		self.edges = set()
 		self.adj = dict()
 		for u in vertices:
 			self.adj[u] = set()
-		for u,v in edges:
-			self.addEdge(u, v)
-		self.size = len(self.vertices)
+		if directed == True:
+			for u,v in edges:
+				self.addEdge(u, v)
+				self.edges.add((u, v))
+		if directed == False:
+			for u,v in edges:
+				self.addEdge(u, v)
+				self.addEdge(v, u)
+				self.edges.add((u, v))
+				self.edges.add((v, u))
 	def addEdge(self, u, v):
 		self.adj[u].add(v)
 	def addVertex(self, u, edges = tuple()):
@@ -232,3 +407,116 @@ class Graph(object):
 			if vertices_list[i + 1] not in cg.adj[vertices_list[i]]:
 				return False
 		return True
+	def cut(self, x, y, w):
+		'''For a given edge (x, y) contained in some minimum spanning tree, 
+		form a minimum spanning tree that contains (x, y) using a method like Prim's algorithm,
+		and construct a cut (S, V - S) such that (x, y) is the light edge crossing
+		the cut, S = {u: u.root = x}'''
+		for v in self.vertices:
+			v.weight = float("Inf")
+			v.p = None
+			v.root = None
+		x.weight = 0
+		y.weight = 0
+		x.root = x
+		y.root = y
+		q = min_priority_queue(self.vertices)
+		while q.heap_size > 0:
+			u = q.heap_extract_min()
+			for v in self.adj[u]:
+				if v in q and w(u, v) < v.weight:
+					v.root = u.root
+					q.heap_decrease_key(v.index, w(u, v))
+					v.p = u
+	def alledges_undirected_dfs(self):
+		global time, l
+		for u in self.vertices:
+			u.color = 0
+			u.p = None
+		time = 0
+		l = []
+		for u in self.vertices:
+			if u.color == 0:
+				self.alledges_undirected_dfs_visit(u)
+		return l
+	def alledges_undirected_dfs_visit(self, u):
+		global time, l
+		time = time + 1
+		u.d = time
+		u.color = 1
+		for v in self.adj[u]:
+			if v.color == 0:
+				l.append((u, v))
+				v.p = u
+				self.alledges_undirected_dfs_visit(v)
+			elif v.color == 1 and u.p != v:
+				l.append((u, v))	
+		u.color = 2
+		time = time + 1
+		u.f = time
+	def Kruskal(self, w):
+		A = set()
+		for v in self.vertices:
+			dsf_node(v)
+#		ls = self.alledges_undirected_dfs()
+		for u,v in sorted(self.edges, key=lambda x: w(x[0], x[1]), reverse = False):
+			if u.index.find_set() != v.index.find_set():
+				A = A.union({(u,v)})
+				u.index.union(v.index)
+		return A
+	def Prim(self, w, r):
+		'''G.Prim(weight, root) -- Given weight function 
+		and an arbitrary vertex root of the graph G, 
+		compute minimum spanning tree using Prim's algorithm'''
+		for v in self.vertices:
+			v.weight = float("Inf")
+			v.p = None
+		r.weight = 0
+		q = min_priority_queue(self.vertices)
+		while q.heap_size > 0:
+			u = q.heap_extract_min()
+			for v in self.adj[u]:
+				if v in q and w(u, v) < v.weight:
+					v.p = u
+					q.heap_decrease_key(v.index, w(u, v))
+	def Bellman_Ford(self, w, s):
+		self.initialize_signle_source(s)
+		for i in range(1, len(self.vertices)):
+			for u,v in self.edges:
+				self.relax(u, v, w)
+			for u in self.vertices:
+				print "{}.d = {}, {}.p = {}".format(u, u.d, u, u.p)
+			print
+		for u,v in self.edges:
+			if v.d > u.d + w(u, v):
+				return False
+		return True
+	def initialize_signle_source(self, s):
+		for v in self.vertices:
+			v.d = float("Inf")
+			v.p = None
+		s.d = 0
+	def relax(self, u, v, w):
+		if v.d > u.d + w(u, v):
+			v.d = u.d + w(u, v)
+			v.p = u
+#	def Prim_vEB(self, w, r, bound):
+#		'''G.Prim(weight, root) -- Given weight function 
+#		and an arbitrary vertex root of the graph G, 
+#		compute minimum spanning tree using Prim's algorithm'''
+#		for v in self.vertices:
+#			v.weight = bound - 1
+#			v.p = None
+#		r.weight = 0
+#		t = vEB_node(bound)	
+#		for u in self.vertices:
+#			t.insert(u)
+#		while t.size > 0:
+#			u = t.minimum()	
+#			t.delete(u)
+#			for v in self.adj[u]:
+#				if t.member(v) and w(u, v) < v.weight:
+#					v.p = u
+#					t.delete(v)
+#					v.weight = w(u, v)	
+#					t.insert(v)

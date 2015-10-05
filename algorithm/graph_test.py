@@ -47,8 +47,8 @@ class TestGraph(unittest.TestCase):
 		g = Graph(vertices, edges)
 		g.dfs()
 		vertices = (s, v, z, w, y, x, t, u)
-		for u in vertices:
-			print u, u.d, u.f
+#		for u in vertices:
+#			print u, u.d, u.f
 		#df = [(1, 10), (12, 13), (2, 9), (7, 8), (3, 6), (4, 5), (11, 16), (14, 15)]
 		#edges_list = [(z, w), (s, w), (y, w), (x, ), (x, ), (z, ), (v, u), (v, t)]
 	def testPathNum(self):
@@ -118,9 +118,9 @@ class TestGraph(unittest.TestCase):
 		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
 		G = Graph(vertices, edges)
 		s = G.simplified()
-		for u in s.vertices:
-			print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
-			s.printEdge(u)
+#		for u in s.vertices:
+#			print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
+#			s.printEdge(u)
 		a = Vertex('a')	
 		b = Vertex('b')	
 		c = Vertex('c')	
@@ -131,9 +131,9 @@ class TestGraph(unittest.TestCase):
 		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (c, e), (b, e), (d, f), (e, f), (f, e)]
 		G = Graph(vertices, edges)
 		s = G.simplified()
-		for u in s.vertices:
-			print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
-			s.printEdge(u)
+		#for u in s.vertices:
+		#	print "u.key: {}, u.cc: {}".format(u.key, u.cc)	
+		#	s.printEdge(u)
 	def testComponentGraph(self):
 		a = Vertex('a')		
 		b = Vertex('b')		
@@ -147,11 +147,10 @@ class TestGraph(unittest.TestCase):
 		edges = [(e, a), (a, b), (b, c), (d, c), (c, d), (d, h), (b, e), (e, f), (b, f), (g, f), (f, g), (c, g), (g, h), (h, h)]	
 		G = Graph(vertices, edges)
 		cg = G.component_graph()
-		print "www"
-		print
-		for u in cg.vertices:
-			print "u.key: {}".format(u.key)	
-			cg.printEdge(u)
+#		print
+#		for u in cg.vertices:
+#			print "u.key: {}".format(u.key)	
+#			cg.printEdge(u)
 		a = Vertex('a')	
 		b = Vertex('b')	
 		c = Vertex('c')	
@@ -162,11 +161,11 @@ class TestGraph(unittest.TestCase):
 		edges = [(a, b), (b, a), (b, c), (b, d), (c, b), (d, b), (c, e), (b, e), (d, f), (e, f), (f, e)]
 		G = Graph(vertices, edges)
 		cg = G.component_graph()
-		print "www"
-		print
-		for u in cg.vertices:
-			print "u.key: {}".format(u.key)	
-			cg.printEdge(u)
+#		print "www"
+#		print
+#		for u in cg.vertices:
+#			print "u.key: {}".format(u.key)	
+#			cg.printEdge(u)
 	def testSemiconnected(self):
 		a = Vertex('a')		
 		b = Vertex('b')		
@@ -213,3 +212,106 @@ class TestGraph(unittest.TestCase):
 		edges = [(abe, cd), (fg, h), (cd, fg)]
 		G = Graph(vertices, edges)
 		self.assertEquals(G.semiconnected(), True)
+	def testCut(self):
+		a = Vertex('a')
+		b = Vertex('b')
+		c = Vertex('c')
+		d = Vertex('d')
+		e = Vertex('e')
+		f = Vertex('f')
+		g = Vertex('g')
+		h = Vertex('h')
+		i = Vertex('i')
+		vertices = [a, b, c, d, e, f, g, h, i]
+		edges = [(a, b), (b, c), (b, h), (c, i), (d, c), (e, d), (f, d), (f, e), (f, c), (g, f), (g, h), (g, i), (h, a), (h, i)]
+		G = Graph(vertices, edges, directed = False)
+		#weight = [4, 8, 11, 2, 7, 9, 14, 10, 4, 2, 2, 1, 8, 7]
+		weight = [4, 8, 11, 2, 7, 9, 14, 10, 4, 2, 1, 6, 8, 7]
+		z = dict()
+		for x,y in zip(edges, weight):
+			z[x] = y	
+			z[(x[1], x[0])] = y
+		def w(x, y):
+			return z[(x, y)]		
+		G.cut(a, h, w)
+		r1 = set()
+		r2 = set()
+		for u in G.vertices:
+			if u.root == a:
+				r1.add(u)
+			else:
+				r2.add(u)
+		self.assertEquals(r1, set([a, b]))
+		self.assertEquals(r2, set([h, i, g, c, f, d, e]))
+#		for u in G.vertices:
+#			print "u.key: {}, u.root = {}".format(u.key, u.root)
+	def testKruskal(self):
+		a = Vertex('a')
+		b = Vertex('b')
+		c = Vertex('c')
+		d = Vertex('d')
+		e = Vertex('e')
+		f = Vertex('f')
+		g = Vertex('g')
+		h = Vertex('h')
+		i = Vertex('i')
+		vertices = [a, b, c, d, e, f, g, h, i]
+		edges = [(a, b), (a, h), (b, a), (b, c), (b, h), (c, b), (c, i), (c, f), (c, d), (d, c), (d, e), (d, f), (e, d), (e, f), (f, d), (f, e), (f, c), (f, g), (g, f), (g, h), (g, i), (h, a), (h, b), (h, i), (h, g), (i, c), (i, h), (i, g)]
+		G = Graph(vertices, edges)
+		weight = [4, 8, 4, 8, 11, 8, 2, 4, 7, 7, 9, 14, 9, 10, 14, 10, 4, 2, 2, 1, 6, 8, 11, 7, 1, 2, 7, 6]
+		z = dict()
+		for x,y in zip(edges, weight):
+			z[x] = y	
+			print "{}: {}".format(x, y)
+		def w(x, y):
+			return z[(x, y)]		
+		ls = G.Kruskal(w)
+		print ls
+	def testPrim(self):
+		a = Vertex('a')
+		b = Vertex('b')
+		c = Vertex('c')
+		d = Vertex('d')
+		e = Vertex('e')
+		f = Vertex('f')
+		g = Vertex('g')
+		h = Vertex('h')
+		i = Vertex('i')
+		vertices = [a, b, c, d, e, f, g, h, i]
+		#edges = [(a, b), (a, h), (b, a), (b, c), (b, h), (c, b), (c, i), (c, f), (c, d), (d, c), (d, e), (d, f), (e, d), (e, f), (f, d), (f, e), (f, c), (f, g), (g, f), (g, h), (g, i), (h, a), (h, b), (h, i), (h, g), (i, c), (i, h), (i, g)]
+		#weight = [4, 8, 4, 8, 11, 8, 2, 4, 7, 7, 9, 14, 9, 10, 14, 10, 4, 2, 2, 1, 6, 8, 11, 7, 1, 2, 7, 6]
+		edges = [(a, b), (b, c), (b, h), (c, i), (d, c), (e, d), (f, d), (f, e), (f, c), (g, f), (g, h), (g, i), (h, a), (h, i)]
+		weight = [4, 8, 11, 2, 7, 9, 14, 10, 4, 2, 1, 6, 8, 7]
+		G = Graph(vertices, edges, False)
+		z = dict()
+		for x,y in zip(edges, weight):
+			z[x] = y	
+			z[(x[1], x[0])] = y
+			#print "Prim edges: {}, weight: {}".format(x, y)
+		def w(x, y):
+			return z[(x, y)]		
+		G.Prim(w, i)
+		s = set()
+		for u in G.vertices:
+			s.add((u.p, u))	
+#		self.assertEquals(s, set([(g, h), (f, g), (None, i), (c, d), (c, f), (i, c), (h, a), (d, e), (a, b)])) 
+	def testBellmanFord(self):
+		s = Vertex('s')
+		t = Vertex('t')
+		y = Vertex('y')
+		x = Vertex('x')
+		z = Vertex('z')
+		vertices = [s, t, y, x, z]
+		edges = [(s, t), (s, y), (t, y), (t, x), (t, z), (y, x), (y, z), (x, t), (z, s), (z, x)]
+		weight = [6, 7, 8, 5, -4, -3, 9, -2, 2, 7]
+		G = Graph(vertices, edges)
+		we = dict()
+		for x,y in zip(edges, weight):
+			we[x] = y	
+		def w(x, y):
+			return we[(x, y)]		
+		G.Bellman_Ford(w, z)
+#		s = set()
+#		for u in G.vertices:
+#			s.add((u.p, u))	
+#		self.assertEquals(s, set([(g, h), (f, g), (None, i), (c, d), (c, f), (i, c), (h, a), (d, e), (a, b)])) 

@@ -3,6 +3,7 @@
 class node(object):
 	def __init__(self, key):
 		self.key = key
+		key.index = self
 		self.p = self
 		self.rank = 0
 		self.child = []
