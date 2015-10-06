@@ -21,9 +21,11 @@ class TestHeap(unittest.TestCase):
 		self.assertEquals(a, [1, 3, 3, 4, 7, 8, 9, 10, 14, 16])
 	def test_min_heapify(self):
 		a = [1, 10, 3, 2, 7, 8, 9, 4, 14, 16]
-		min_heap(a).min_heapify(1)
-		self.assertEquals(a, [1, 2, 3, 4, 7, 8, 9, 10, 14, 16])
+		h = min_heap(a)
+		h.min_heapify(1)
+		self.assertEquals(h, [1, 2, 3, 4, 7, 8, 9, 10, 14, 16])
 	def test_build_min_heap(self):
 		a = [1, 10, 3, 2, 7, 8, 9, 4, 14, 16]
-		min_heap(a).build_min_heap()
-		self.assertEquals(a, [1, 2, 3, 4, 7, 8, 9, 10, 14, 16])
+		h = min_heap(a)
+		h.build_min_heap()
+		self.assertEquals(h, [1, 2, 3, 4, 7, 8, 9, 10, 14, 16])

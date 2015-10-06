@@ -29,27 +29,27 @@ class max_priority_queue(max_heap):
 		self.heap_increase_key(self.heap_size - 1, key)
 class min_priority_queue(min_heap):
 	def heap_minimum(self):
-		return self.heap[0]
+		return self[0]
 	def heap_extract_min(self):
 		if self.heap_size < 1:
 			sys.exit("heap underflow")
-		minimum = self.heap[0]
-		self.heap[0] = self.heap[self.heap_size - 1]
+		minimum = self[0]
+		self[0] = self[self.heap_size - 1]
 		self.heap_size = self.heap_size - 1
 		self.min_heapify(0)
 		return minimum
 	def heap_decrease_key(self, i, key):
-		if key > self.heap[i]:
+		if key > self[i]:
 			sys.exit("new key is larger than current key")
-		self.heap[i] = key
-		while i > 0 and self.heap[self.parent(i)] > self.heap[i]:
-			tmp = self.heap[self.parent(i)]
-			self.heap[self.parent(i)] = self.heap[i]
-			self.heap[i] = tmp	
+		self[i] = key
+		while i > 0 and self[self.parent(i)] > self[i]:
+			tmp = self[self.parent(i)]
+			self[self.parent(i)] = self[i]
+			self[i] = tmp	
 			i = self.parent(i)
 	def min_heap_insert(self, key):
 		if self.heap_size >= self.length:
 			sys.exit("heap overflow")
 		self.heap_size = self.heap_size + 1
-		self.heap[self.heap_size - 1] = float("Inf")
+		self[self.heap_size - 1] = float("Inf")
 		self.heap_decrease_key(self.heap_size - 1, key)

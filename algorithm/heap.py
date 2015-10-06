@@ -32,12 +32,14 @@ class max_heap(object):
 			self.heap[0],self.heap[i] = self.heap[i],self.heap[0]
 			self.heap_size = self.heap_size - 1
 			self.max_heapify(0)
-class min_heap(object):
+class min_heap(list):
 	def __init__(self, data):
-		self.heap = data
+		list.__init__(self, data)
 		self.length = len(data)
 		self.heap_size = self.length
 		self.build_min_heap()
+	def __contains__(self, y):
+		return y in self[0:self.heap_size]
 	def left(self, i):
 		return 2 * i + 1
 	def right(self, i):
@@ -47,14 +49,14 @@ class min_heap(object):
 	def min_heapify(self, i):
 		l = self.left(i)
 		r = self.right(i)
-		if (l <= (self.heap_size - 1)) and (self.heap[l] < self.heap[i]):
+		if (l <= (self.heap_size - 1)) and (self[l] < self[i]):
 			smallest = l
 		else:
 			smallest = i
-		if (r <= (self.heap_size - 1)) and (self.heap[r] < self.heap[smallest]):
+		if (r <= (self.heap_size - 1)) and (self[r] < self[smallest]):
 			smallest = r
 		if 	smallest != i:
-			self.heap[i],self.heap[smallest] = self.heap[smallest],self.heap[i]
+			self[i],self[smallest] = self[smallest],self[i]
 			self.min_heapify(smallest)
 	def build_min_heap(self):
 		self.heap_size = self.length
