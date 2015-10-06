@@ -1,87 +1,709 @@
-BinSearch	BinSearch.c	/^int BinSearch(int A[], int first, int end, int x) /
-BinSearch	InsSort-BinSearch.c	/^int BinSearch(int A[], int first, int end, int x)$/
-BinSearch	SeekSum.c	/^int BinSearch(int A[], int first, int end, int x) /
-BinaryAdd	BinaryAdd.c	/^void BinaryAdd(int a[], int b[], int n,int c[]) {$/
-BubbleSort	BubbleSort.c	/^void BubbleSort(int A[], int n) {$/
-Combine	MergeSort.c	/^void Combine(int A[], int first, int inter, int en/
-FIND_MAXIMUM_SUBARRAY	maximum-subarray-brute-force.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
-FIND_MAXIMUM_SUBARRAY	maximum-subarray-inline.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
-FIND_MAXIMUM_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int lo/
-FIND_MAX_CROSSING_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAX_CROSSING_SUBARRAY(int A[], i/
-Horner	Horner.c	/^void Horner(int A[], int n, int x)  {$/
-InsSort	insertion-sort-rec.c	/^void InsSort(int A[], int n)$/
-InsSort	Ins-Merge2.c	/^void InsSort(int a[], int n)$/
-InsSort	Ins-Merge.c	/^void InsSort(int a[], int n)$/
-InsSort	InsSort-BinSearch.c	/^void InsSort(int a[], int n)$/
-InsSort	InsSort.c	/^void InsSort(int a[], int n)$/
-Insert	insertion-sort-rec.c	/^void Insert(int A[], int n)$/
-MBinSearch	BinSearch.c	/^void main() {$/
-MBinaryAdd	BinaryAdd.c	/^int main() {$/
-MBubbleSort	BubbleSort.c	/^int main() {$/
-MERGE	Ins-Merge2.c	/^void MERGE(int A[], int first, int inter, int end)/
-MERGE	Ins-Merge.c	/^void MERGE(int A[], int first, int inter, int end)/
-MHorner	Horner.c	/^int main() {$/
-MIns-Merge	Ins-Merge.c	/^int main()$/
-MIns-Merge2	Ins-Merge2.c	/^int main()$/
-MInsSort	InsSort.c	/^void main()$/
-MInsSort-BinSearch	InsSort-BinSearch.c	/^int main()$/
-MMergeSort	MergeSort.c	/^void main() {$/
-MSeekSum	SeekSum.c	/^int main() {$/
-Madd	add.c	/^int main() {$/
-Mbinsearch	binsearch.c	/^void main() {$/
-MergeSort	Ins-Merge2.c	/^void MergeSort(int A[], int start, int end, int le/
-MergeSort	Ins-Merge.c	/^void MergeSort(int A[], int n, int length)$/
-MergeSort	MergeSort.c	/^void MergeSort(int A[], int first, int end) {$/
-Minsertion-sort-rec	insertion-sort-rec.c	/^int main()$/
-Mmain	main.c	/^int main(int argc, char *argv[]) {$/
-Mmaximum-subarray-brute-force	maximum-subarray-brute-force.c	/^int main() {$/
-Mmaximum-subarray-inline	maximum-subarray-inline.c	/^int main() {$/
-Mmaximum-subarray-recursive	maximum-subarray-recursive.c	/^int main() {$/
-Mmerge-sort	merge-sort.c	/^int main() {$/
-Mselection-sort	selection-sort.c	/^int main() {$/
-Msquare-matrix-multiply-brute-force	square-matrix-multiply-brute-force.c	/^int main() {$/
-N	add.c	3
-RANK	square-matrix-multiply-brute-force2.c	8
-SeekSum	SeekSum.c	/^void SeekSum(int A[], int first, int end, int x) {/
-SelectionSort	selection-sort.c	/^void SelectionSort(int *A, int n) {$/
-binsearch	binsearch.c	/^int binsearch(int x, int v[], int n) {$/
-combine	inversion2.c	/^static int combine(int B[], int first, int inter, /
-combine	inversion.c	/^static void combine(int B[], int first, int inter,/
-divide	inversion2.c	/^int divide(int B[], int first, int end)$/
-divide	inversion.c	/^static void divide(int B[], int first, int end)$/
-fib	Fibonacci.c	/^int fib(int n) {$/
-gcd	gcd.c	/^ unsigned gcd(unsigned m, unsigned n) {$/
-high	maximum-subarray-brute-force.c	6
-high	maximum-subarray-inline.c	6
-high	maximum-subarray-recursive.c	6
-insertionsort	insertion-sort.c	/^void insertionsort(int s[], int length) {$/
-insertionsort	insertion-sort-noninc.c	/^void insertionsort(int s[], int length) {$/
-inversion	inversion2.c	/^int inversion(int A[], int first, int end) {$/
-inversion	inversion.c	/^int inversion(int A[], int first, int end) {$/
-invs	inversion.c	23
-low	maximum-subarray-brute-force.c	5
-low	maximum-subarray-inline.c	5
-low	maximum-subarray-recursive.c	5
-matrix_add	square-matrix-multiply-recursive.c	/^static void matrix_add(int *A, int *B, int *C, int/
-matrix_exp	matrix_pow.c	/^void matrix_exp(int *A, int *B, int n, int pow) {$/
-max_subsequence_sum	max_subsequence_sum.c	/^int max_subsequence_sum(int a[], unsigned n) {$/
-merge	merge-sort.c	/^void merge(int a[], int begin, int middle, int end/
-merge_sort	merge-sort.c	/^void merge_sort(int a[], int start, int end) {$/
-pow1	pow.c	/^int pow1(int x, unsigned n) {$/
-pow2	pow.c	/^int pow2(int x, unsigned n) {$/
-qsort	qsort.c	/^void qsort(int v[], int left, int right) {$/
-square_matrix_multiply	square-matrix-multiply-brute-force2.c	/^void square_matrix_multiply(int a[][RANK], int b[]/
-square_matrix_multiply	square-matrix-multiply-brute-force.c	/^void square_matrix_multiply(int *a, int *b, int *c/
-square_matrix_multiply	square-matrix-multiply-recursive.c	/^void square_matrix_multiply(int *A, int *B, int *C/
-submatrix_init	square-matrix-multiply-recursive.c	/^static void submatrix_init(int *S, int S_row, int /
-sum	maximum-subarray-brute-force.c	7
-sum	maximum-subarray-inline.c	7
-sum	maximum-subarray-recursive.c	7
-swap	Fibonacci.c	/^void swap(int *x, int *y) {$/
-swap	insertion-sort-rec.c	/^void swap(int *a, int *b)$/
-swap	InsSort-BinSearch.c	/^void swap(int *a, int *b)$/
-swap	qsort.c	/^void swap(int v[], int i, int j) {$/
-to_matrix	square-matrix-multiply-recursive.c	/^static void to_matrix(int *S, int S_row, int S_col/
-value	maximum-subarray-brute-force.c	4
-value	maximum-subarray-inline.c	4
-value	maximum-subarray-recursive.c	4
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	common-matrix-multiply-Strassen.py	/^A = array([[1, 3], [7, 5]])$/;"	v
+A	common-matrix-multiply-recursive.py	/^A = array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])$/;"	v
+A	kth-Quantiles.py	/^A = [random.randint(1, 100)  for i in range(0, 15)]$/;"	v
+A	square-matrix-multiply-Strassen.py	/^A = array([[1, 3], [7, 5]])$/;"	v
+B	common-matrix-multiply-Strassen.py	/^B = array([[6, 8], [4, 2]])$/;"	v
+B	common-matrix-multiply-recursive.py	/^B = array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])$/;"	v
+B	kth-Quantiles.py	/^B = [random.randint(1, 100)  for i in range(0, 15)]$/;"	v
+B	square-matrix-multiply-Strassen.py	/^B = array([[6, 8], [4, 2]])$/;"	v
+Bellman_Ford	graph.py	/^    def Bellman_Ford(self, w, s):$/;"	m	class:Graph
+Bellman_Ford_modified	graph.py	/^    def Bellman_Ford_modified(self, w, s):$/;"	m	class:Graph
+BinSearch	BinSearch.c	/^int BinSearch(int A[], int first, int end, int x) {$/;"	f
+BinSearch	InsSort-BinSearch.c	/^int BinSearch(int A[], int first, int end, int x)$/;"	f
+BinSearch	SeekSum.c	/^int BinSearch(int A[], int first, int end, int x) {$/;"	f
+BinaryAdd	BinaryAdd.c	/^void BinaryAdd(int a[], int b[], int n,int c[]) {$/;"	f
+BubbleSort	BubbleSort.c	/^void BubbleSort(int A[], int n) {$/;"	f
+Combine	MergeSort.c	/^void Combine(int A[], int first, int inter, int end) {$/;"	f
+EmptyException	queue.py	/^class EmptyException(Exception):$/;"	c
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-brute-force.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int low, int high) {$/;"	f
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-inline.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int low, int high) {$/;"	f
+FIND_MAXIMUM_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAXIMUM_SUBARRAY(int A[], int low, int high) {$/;"	f
+FIND_MAX_CROSSING_SUBARRAY	maximum-subarray-recursive.c	/^struct value FIND_MAX_CROSSING_SUBARRAY(int A[], int low, int mid, int high) {$/;"	f
+FullException	queue.py	/^class FullException(Exception):$/;"	c
+G	test.py	/^G = Graph(vertices, edges)$/;"	v
+Graph	graph.py	/^class Graph(object):$/;"	c
+Horner	Horner.c	/^void Horner(int A[], int n, int x)  {$/;"	f
+InsSort	Ins-Merge.c	/^void InsSort(int a[], int n)$/;"	f
+InsSort	Ins-Merge2.c	/^void InsSort(int a[], int n)$/;"	f
+InsSort	InsSort-BinSearch.c	/^void InsSort(int a[], int n)$/;"	f
+InsSort	InsSort.c	/^void InsSort(int a[], int n)$/;"	f
+InsSort	insertion-sort-rec.c	/^void InsSort(int A[], int n)$/;"	f
+Insert	insertion-sort-rec.c	/^void Insert(int A[], int n)$/;"	f
+IntegerArithmenticTestCase	no_test.py	/^class IntegerArithmenticTestCase(unittest.TestCase):$/;"	c
+Kruskal	graph.py	/^    def Kruskal(self, w):$/;"	m	class:Graph
+MERGE	Ins-Merge.c	/^void MERGE(int A[], int first, int inter, int end)$/;"	f
+MERGE	Ins-Merge2.c	/^void MERGE(int A[], int first, int inter, int end)$/;"	f
+MergeSort	Ins-Merge.c	/^void MergeSort(int A[], int n, int length)$/;"	f
+MergeSort	Ins-Merge2.c	/^void MergeSort(int A[], int start, int end, int length)$/;"	f
+MergeSort	MergeSort.c	/^void MergeSort(int A[], int first, int end) {$/;"	f
+Min_priority_queue	huffman.py	/^class Min_priority_queue(min_priority_queue):$/;"	c
+N	add.c	3;"	d	file:
+Node	tree.py	/^class Node(object):$/;"	c
+Prim	graph.py	/^    def Prim(self, w, r):$/;"	m	class:Graph
+RANK	square-matrix-multiply-brute-force2.c	8;"	d	file:
+SeekSum	SeekSum.c	/^void SeekSum(int A[], int first, int end, int x) {$/;"	f
+SelectionSort	selection-sort.c	/^void SelectionSort(int *A, int n) {$/;"	f
+T	hash.py	/^T = [None for i in range(0, 11)]$/;"	v
+TestCutRod	cut_rod_test.py	/^class TestCutRod(unittest.TestCase):$/;"	c
+TestDagShortestPathsModified	graph_test.py	/^    def TestDagShortestPathsModified(self):$/;"	m	class:TestGraph
+TestDisjointSets	disjoint_sets_forest_test.py	/^class TestDisjointSets(unittest.TestCase):$/;"	c
+TestDisjointSets	disjoint_sets_test.py	/^class TestDisjointSets(unittest.TestCase):$/;"	c
+TestGraph	graph_test.py	/^class TestGraph(unittest.TestCase):$/;"	c
+TestHeap	counting_sort_test.py	/^class TestHeap(unittest.TestCase):$/;"	c
+TestHeap	heap_test.py	/^class TestHeap(unittest.TestCase):$/;"	c
+TestHeap	quicksort_test.py	/^class TestHeap(unittest.TestCase):$/;"	c
+TestIntervalTree	interval_tree_test.py	/^class TestIntervalTree(unittest.TestCase):$/;"	c
+TestLCS	largest_common_subsequence_test.py	/^class TestLCS(unittest.TestCase):$/;"	c
+TestMaxPriorityQueue	priority_queue_test.py	/^class TestMaxPriorityQueue(unittest.TestCase):$/;"	c
+TestMinGapTree	min_gap_tree_test.py	/^class TestMinGapTree(unittest.TestCase):$/;"	c
+TestMinPriorityQueue	priority_queue_test.py	/^class TestMinPriorityQueue(unittest.TestCase):$/;"	c
+TestOstree	os_tree_test.py	/^class TestOstree(unittest.TestCase):$/;"	c
+TestOstree	pointer_tree_test.py	/^class TestOstree(unittest.TestCase):$/;"	c
+TestOstree	rank_tree_test.py	/^class TestOstree(unittest.TestCase):$/;"	c
+TestRandSelect	randomized_select_test.py	/^class TestRandSelect(unittest.TestCase):$/;"	c
+TestRbtree	bh_tree_test.py	/^class TestRbtree(unittest.TestCase):$/;"	c
+TestRbtree	depth_tree_test.py	/^class TestRbtree(unittest.TestCase):$/;"	c
+TestRbtree	rb_tree_test.py	/^class TestRbtree(unittest.TestCase):$/;"	c
+TestRbtree	universal_sink_test.py	/^class TestRbtree(unittest.TestCase):$/;"	c
+TestWrestler	wrestlers_test.py	/^class TestWrestler(unittest.TestCase):$/;"	c
+Tree	tree.py	/^class Tree(object):$/;"	c
+Vertex	graph.py	/^class Vertex(object):$/;"	c
+__contains__	graph.py	/^    def __contains__(self, y):$/;"	m	class:min_heap	file:
+__contains__	heap.py	/^	def __contains__(self, y):$/;"	m	class:min_heap	file:
+__eq__	huffman.py	/^	def __eq__(self, y):$/;"	m	class:character	file:
+__eq__	huffman.py	/^	def __eq__(self, y):$/;"	m	class:node	file:
+__eq__	huffman.py	/^	def __eq__(self, y):$/;"	m	class:tenary_node	file:
+__ge__	huffman.py	/^	def __ge__(self, y):$/;"	m	class:character	file:
+__ge__	huffman.py	/^	def __ge__(self, y):$/;"	m	class:node	file:
+__ge__	huffman.py	/^	def __ge__(self, y):$/;"	m	class:tenary_node	file:
+__getitem__	rb_tree.py	/^	def __getitem__(self, key):$/;"	m	class:rb_tree	file:
+__getitem__	tree.py	/^	def __getitem__(self, key):$/;"	m	class:Tree	file:
+__gt__	huffman.py	/^	def __gt__(self, y):$/;"	m	class:character	file:
+__gt__	huffman.py	/^	def __gt__(self, y):$/;"	m	class:node	file:
+__gt__	huffman.py	/^	def __gt__(self, y):$/;"	m	class:tenary_node	file:
+__init__	b_tree.py	/^	def __init__(self, t):$/;"	m	class:b_tree
+__init__	b_tree.py	/^	def __init__(self, t, leaf, n):$/;"	m	class:b_tree_node
+__init__	bh_tree.py	/^	def __init__(self, key, p, left, right, color, bh):$/;"	m	class:bh_node
+__init__	bh_tree.py	/^	def __init__(self, values):$/;"	m	class:bh_tree
+__init__	binary_counter.py	/^	def __init__(self, size):$/;"	m	class:binary_counter
+__init__	depth_tree.py	/^	def __init__(self, key, p, left, right, color, depth):$/;"	m	class:depth_node
+__init__	depth_tree.py	/^	def __init__(self, values):$/;"	m	class:depth_tree
+__init__	disjoint_sets_forest.py	/^	def __init__(self, key):$/;"	m	class:node
+__init__	disjoint_sets_linked_list.py	/^	def __init__(self, element):$/;"	m	class:header
+__init__	disjoint_sets_linked_list.py	/^	def __init__(self, element):$/;"	m	class:header_notail
+__init__	disjoint_sets_linked_list.py	/^	def __init__(self, key):$/;"	m	class:node
+__init__	fibonacci_heap.py	/^	def __init__(self):$/;"	m	class:fibonacci_heap
+__init__	fibonacci_heap.py	/^	def __init__(self, k):$/;"	m	class:fibonacci_node
+__init__	graph.py	/^    def __init__(self, data):$/;"	m	class:min_heap
+__init__	graph.py	/^    def __init__(self, key):$/;"	m	class:Vertex
+__init__	graph.py	/^    def __init__(self, vertices = tuple(), edges = tuple(), directed = True):$/;"	m	class:Graph
+__init__	heap.py	/^	def __init__(self, data):$/;"	m	class:max_heap
+__init__	heap.py	/^	def __init__(self, data):$/;"	m	class:min_heap
+__init__	huffman.py	/^	def __init__(self, char, freq, sibling = None):$/;"	m	class:character
+__init__	huffman.py	/^	def __init__(self, freq, child = None, sibling = None):$/;"	m	class:tenary_node
+__init__	huffman.py	/^	def __init__(self, left, right, freq):$/;"	m	class:node
+__init__	interval_tree.py	/^	def __init__(self, intervals):$/;"	m	class:interval_tree
+__init__	interval_tree.py	/^	def __init__(self, key, p, left, right, color, interval, maximum):$/;"	m	class:interval_node
+__init__	interval_tree.py	/^	def __init__(self, low, high):$/;"	m	class:interval
+__init__	min_gap_tree.py	/^	def __init__(self, key, p, left, right, color, successor, min_gap):$/;"	m	class:min_gap_node
+__init__	min_gap_tree.py	/^	def __init__(self, values):$/;"	m	class:min_gap_tree
+__init__	os_tree.py	/^	def __init__(self, key, p, left, right, color, size):$/;"	m	class:os_node
+__init__	os_tree.py	/^	def __init__(self, values):$/;"	m	class:os_tree
+__init__	pointer_tree.py	/^	def __init__(self, key, p, left, right, color, minimum, maximum, predecessor, successor):$/;"	m	class:pointer_node
+__init__	pointer_tree.py	/^	def __init__(self, values):$/;"	m	class:pointer_tree
+__init__	queue.py	/^	def __init__(self):$/;"	m	class:EmptyException
+__init__	queue.py	/^	def __init__(self):$/;"	m	class:FullException
+__init__	queue.py	/^	def __init__(self, size):$/;"	m	class:queue
+__init__	rank_tree.py	/^	def __init__(self, key, p, left, right, color, rank):$/;"	m	class:rank_node
+__init__	rank_tree.py	/^	def __init__(self, values):$/;"	m	class:rank_tree
+__init__	rb_tree.py	/^	def __init__(self, key, p, left, right, color):$/;"	m	class:rb_node
+__init__	rb_tree.py	/^	def __init__(self, values):$/;"	m	class:rb_tree
+__init__	single_edge.py	/^	def __init__(self, data, option = 0):$/;"	m	class:graph
+__init__	single_edge.py	/^	def __init__(self, key, right):$/;"	m	class:node
+__init__	tree.py	/^	def __init__(self, key, p, left, right):$/;"	m	class:Node
+__init__	tree.py	/^	def __init__(self, values):$/;"	m	class:Tree
+__init__	vEB_tree.py	/^	def __init__(self, u):$/;"	m	class:vEB_node
+__iter__	fibonacci_heap.py	/^	def __iter__(self):$/;"	m	class:fibonacci_heap	file:
+__iter__	fibonacci_heap.py	/^	def __iter__(self):$/;"	m	class:fibonacci_node	file:
+__le__	huffman.py	/^	def __le__(self, y):$/;"	m	class:character	file:
+__le__	huffman.py	/^	def __le__(self, y):$/;"	m	class:node	file:
+__le__	huffman.py	/^	def __le__(self, y):$/;"	m	class:tenary_node	file:
+__lt__	huffman.py	/^	def __lt__(self, y):$/;"	m	class:character	file:
+__lt__	huffman.py	/^	def __lt__(self, y):$/;"	m	class:node	file:
+__lt__	huffman.py	/^	def __lt__(self, y):$/;"	m	class:tenary_node	file:
+__repr__	fibonacci_heap.py	/^	def __repr__(self):$/;"	m	class:fibonacci_heap	file:
+__repr__	graph.py	/^    def __repr__(self):$/;"	m	class:Vertex	file:
+_total_path_number_dfs	graph.py	/^    def _total_path_number_dfs(self):$/;"	m	class:Graph
+_total_path_number_dfs_visit	graph.py	/^    def _total_path_number_dfs_visit(self, u):$/;"	m	class:Graph
+a	b_tree_test.py	/^a = bt.b_tree_node(3, True, 2)$/;"	v
+activity_selection	activity_selection.py	/^def activity_selection(s, f, n):$/;"	f
+activity_selection_with_weight	activity_selection.py	/^def activity_selection_with_weight(s, f, v, n):$/;"	f
+addEdge	graph.py	/^    def addEdge(self, u, v):$/;"	m	class:Graph
+addVertex	graph.py	/^    def addVertex(self, u, edges = tuple()):$/;"	m	class:Graph
+add_child	fibonacci_heap.py	/^	def add_child(self, y):$/;"	m	class:fibonacci_node
+alledges_undirected_dfs	graph.py	/^    def alledges_undirected_dfs(self):$/;"	m	class:Graph
+alledges_undirected_dfs_visit	graph.py	/^    def alledges_undirected_dfs_visit(self, u):$/;"	m	class:Graph
+aux	hash.py	/^def aux(k):$/;"	f
+b	b_tree_test.py	/^b = bt.b_tree_node(3, True, 3)$/;"	v
+b_tree	b_tree.py	/^class b_tree(object):$/;"	c
+b_tree_node	b_tree.py	/^class b_tree_node(object):$/;"	c
+bfs	graph.py	/^    def bfs(self, s):$/;"	m	class:Graph
+bfs	wrestlers.py	/^def bfs(g, s):$/;"	f
+bh_node	bh_tree.py	/^class bh_node(rb_node):$/;"	c
+bh_tree	bh_tree.py	/^class bh_tree(rb_tree):$/;"	c
+binary_counter	binary_counter.py	/^class binary_counter(list):$/;"	c
+binsearch	binsearch.c	/^int binsearch(int x, int v[], int n) {$/;"	f
+bottom_up_cut_rod	cut_rod.py	/^def bottom_up_cut_rod(p, n):$/;"	f
+bottom_up_cut_rod_two_subproblem	cut_rod.py	/^def bottom_up_cut_rod_two_subproblem(p, n):$/;"	f
+bottom_up_cut_rod_with_fixed_cut_cost	cut_rod.py	/^def bottom_up_cut_rod_with_fixed_cut_cost(p, n, c):$/;"	f
+bottom_up_matrix_chain_order	matrix_chain_order.py	/^def bottom_up_matrix_chain_order(p):$/;"	f
+build_max_heap	heap.py	/^	def build_max_heap(self):$/;"	m	class:max_heap
+build_min_heap	graph.py	/^    def build_min_heap(self):$/;"	m	class:min_heap
+build_min_heap	heap.py	/^	def build_min_heap(self):$/;"	m	class:min_heap
+c	b_tree_test.py	/^c = bt.b_tree_node(3, True, 3)$/;"	v
+cascading_cut	fibonacci_heap.py	/^	def cascading_cut(self, y):$/;"	m	class:fibonacci_heap
+character	huffman.py	/^class character(object):$/;"	c
+child	fibonacci_heap.py	/^	child = None$/;"	v	class:fibonacci_node
+closed_interval_search	interval_tree.py	/^	def closed_interval_search(self, interval):$/;"	m	class:interval_tree
+closed_interval_serach_straightforward	interval_tree.py	/^	def closed_interval_serach_straightforward(self, interval):$/;"	m	class:interval_tree
+combine	inversion.c	/^static void combine(int B[], int first, int inter, int end)$/;"	f	file:
+combine	inversion2.c	/^static int combine(int B[], int first, int inter, int end)$/;"	f	file:
+common_matrix_multiply	common-matrix-multiply-Strassen.py	/^def common_matrix_multiply(A, B):$/;"	f
+common_matrix_multiply	common-matrix-multiply-recursive.py	/^def common_matrix_multiply(A, B):$/;"	f
+compact_store_prefix_code	huffman.py	/^def compact_store_prefix_code(root):$/;"	f
+compact_store_prefix_code_aux	huffman.py	/^def compact_store_prefix_code_aux(node, store, string):$/;"	f
+component_graph	graph.py	/^    def component_graph(self):$/;"	m	class:Graph
+component_graph_dfs_visit	graph.py	/^    def component_graph_dfs_visit(self, u):$/;"	m	class:Graph
+concatenate	fibonacci_heap.py	/^	def concatenate(self, x):$/;"	m	class:fibonacci_node
+consolidate	fibonacci_heap.py	/^	def consolidate(self):$/;"	m	class:fibonacci_heap
+construct_optimal_bst	optimal_binary_search_tree.py	/^def construct_optimal_bst(root):$/;"	f
+construct_optimal_bst_aux	optimal_binary_search_tree.py	/^def construct_optimal_bst_aux(root, p, i, j):$/;"	f
+contains	contains.py	/^def contains(x, n):$/;"	f
+counting_sort	counting_sort.py	/^def counting_sort(A, B, k):$/;"	f
+cut	fibonacci_heap.py	/^	def cut(self, x, y):$/;"	m	class:fibonacci_heap
+cut	graph.py	/^    def cut(self, x, y, w):$/;"	m	class:Graph
+d	b_tree_test.py	/^d = bt.b_tree_node(3, True, 2)$/;"	v
+dag_shortest_paths	graph.py	/^    def dag_shortest_paths(self, w, s):$/;"	m	class:Graph
+dag_shortest_paths_modified	graph.py	/^    def dag_shortest_paths_modified(self, s):$/;"	m	class:Graph
+dag_shortest_paths_modified	test.py	/^def dag_shortest_paths_modified(G, s):$/;"	f
+decode_compact_prefix_code	huffman.py	/^def decode_compact_prefix_code(store):$/;"	f
+decrease_all_successors	rank_tree.py	/^	def decrease_all_successors(self, amount):$/;"	m	class:rank_node
+decrease_key	fibonacci_heap.py	/^	def decrease_key(self, x, k):$/;"	m	class:fibonacci_heap
+degree	fibonacci_heap.py	/^	degree = 0$/;"	v	class:fibonacci_node
+delete	b_tree.py	/^	def delete(self, tree, k):$/;"	m	class:b_tree_node
+delete	depth_tree.py	/^	def delete(self, z):$/;"	m	class:depth_tree
+delete	fibonacci_heap.py	/^	def delete(self, x):$/;"	m	class:fibonacci_heap
+delete	interval_tree.py	/^	def delete(self, z):$/;"	m	class:interval_tree
+delete	min_gap_tree.py	/^	def delete(self, z):$/;"	m	class:min_gap_tree
+delete	os_tree.py	/^	def delete(self, z):$/;"	m	class:os_tree
+delete	pointer_tree.py	/^	def delete(self, z):$/;"	m	class:pointer_tree
+delete	rank_tree.py	/^	def delete(self, z):$/;"	m	class:rank_tree
+delete	rb_tree.py	/^	def delete(self, z):$/;"	m	class:rb_tree
+delete	tree.py	/^	def delete(self, z):$/;"	m	class:Tree
+delete	vEB_tree.py	/^	def delete(self, x):$/;"	m	class:vEB_node
+delete_fixup	bh_tree.py	/^	def delete_fixup(self, x):$/;"	m	class:bh_tree
+delete_fixup	rb_tree.py	/^	def delete_fixup(self, x):$/;"	m	class:rb_tree
+depth_node	depth_tree.py	/^class depth_node(rb_node):$/;"	c
+depth_tree	depth_tree.py	/^class depth_tree(rb_tree):$/;"	c
+dequeue	queue.py	/^	def dequeue(self):$/;"	m	class:queue
+dfs	graph.py	/^    def dfs(self):$/;"	m	class:Graph
+dfs_visit	graph.py	/^    def dfs_visit(self, u):$/;"	m	class:Graph
+divide	inversion.c	/^static void divide(int B[], int first, int end)$/;"	f	file:
+divide	inversion2.c	/^int divide(int B[], int first, int end)$/;"	f
+double_hashing	hash.py	/^def double_hashing(k, i):$/;"	f
+e	b_tree_test.py	/^e = bt.b_tree_node(3, False, 3)$/;"	v
+edges	test.py	/^edges = [(u, v), (v, w), (v, z)]$/;"	v
+empty	queue.py	/^	def empty(self):$/;"	m	class:queue
+empty	stack.py	/^	def empty(self):$/;"	m	class:stack
+empty_tree_insert	vEB_tree.py	/^	def empty_tree_insert(self, x):$/;"	m	class:vEB_node
+enqueue	queue.py	/^	def enqueue(self, x):$/;"	m	class:queue
+extended_bottom_up_cut_rod	cut_rod.py	/^def extended_bottom_up_cut_rod(p, n):$/;"	f
+extended_bottom_up_cut_rod	extended_bottom_up_cut_rod.py	/^def extended_bottom_up_cut_rod(p, n):$/;"	f
+extended_memoized_cut_rod	cut_rod.py	/^def extended_memoized_cut_rod(p, n):$/;"	f
+extended_memoized_cut_rod_aux	cut_rod.py	/^def extended_memoized_cut_rod_aux(p, n, r, s):$/;"	f
+extract_min	fibonacci_heap.py	/^	def extract_min(self):$/;"	m	class:fibonacci_heap
+f	auto.py	/^f = open('\/home\/windheart\/bin\/ftp.py')$/;"	v
+fib	Fibonacci.c	/^int fib(int n) {$/;"	f
+fibonacci_heap	fibonacci_heap.py	/^class fibonacci_heap(object):$/;"	c
+fibonacci_node	fibonacci_heap.py	/^class fibonacci_node(object):$/;"	c
+find_set	disjoint_sets_forest.py	/^	def find_set(self):$/;"	m	class:node
+find_set	disjoint_sets_linked_list.py	/^	def find_set(self):$/;"	m	class:node
+full	queue.py	/^	def full(self):$/;"	m	class:queue
+gcd	gcd.c	/^ unsigned gcd(unsigned m, unsigned n) {$/;"	f
+grandchild	single_edge.py	/^	def grandchild(self):$/;"	m	class:graph
+graph	single_edge.py	/^class graph(object):$/;"	c
+greedy_activity_selector	activity_selection.py	/^def greedy_activity_selector(s, f):$/;"	f
+greedy_activity_selector_last	activity_selection.py	/^def greedy_activity_selector_last(s, f):$/;"	f
+greedy_matrix_chain_order	matrix_chain_order.py	/^def greedy_matrix_chain_order(p):$/;"	f
+greedy_matrix_chain_order_aux	matrix_chain_order.py	/^def greedy_matrix_chain_order_aux(p, i, j):$/;"	f
+hash_insert	hash.py	/^def hash_insert(T, k, h):$/;"	f
+header	disjoint_sets_linked_list.py	/^class header(object):$/;"	c
+header_notail	disjoint_sets_linked_list.py	/^class header_notail(object):$/;"	c
+heap_decrease_key	graph.py	/^    def heap_decrease_key(self, i, key):$/;"	m	class:min_priority_queue
+heap_decrease_key	priority_queue.py	/^	def heap_decrease_key(self, i, key):$/;"	m	class:min_priority_queue
+heap_extract_max	priority_queue.py	/^	def heap_extract_max(self):$/;"	m	class:max_priority_queue
+heap_extract_min	graph.py	/^    def heap_extract_min(self):$/;"	m	class:min_priority_queue
+heap_extract_min	priority_queue.py	/^	def heap_extract_min(self):$/;"	m	class:min_priority_queue
+heap_increase_key	priority_queue.py	/^	def heap_increase_key(self, i, key):$/;"	m	class:max_priority_queue
+heap_maximum	priority_queue.py	/^	def heap_maximum(self):$/;"	m	class:max_priority_queue
+heap_minimum	graph.py	/^    def heap_minimum(self):$/;"	m	class:min_priority_queue
+heap_minimum	priority_queue.py	/^	def heap_minimum(self):$/;"	m	class:min_priority_queue
+heapsort	heap.py	/^	def heapsort(self):$/;"	m	class:max_heap
+high	maximum-subarray-brute-force.c	/^        int high;$/;"	m	struct:value	file:
+high	maximum-subarray-inline.c	/^        int high;$/;"	m	struct:value	file:
+high	maximum-subarray-recursive.c	/^	int high;$/;"	m	struct:value	file:
+high	vEB_tree.py	/^	def high(self, x):$/;"	m	class:vEB_node
+huffman	huffman.py	/^def huffman(chars, freqs):$/;"	f
+huffman_tenary	huffman.py	/^def huffman_tenary(chars, freqs, m):$/;"	f
+increment	binary_counter.py	/^	def increment(self):$/;"	m	class:binary_counter
+index	vEB_tree.py	/^	def index(self, x, y):$/;"	m	class:vEB_node
+initialize_signle_source	graph.py	/^    def initialize_signle_source(self, s):$/;"	m	class:Graph
+inorder_tree_walk	largest_common_subsequence.py	/^def inorder_tree_walk(node, C):$/;"	f
+inorder_tree_walk	tree.py	/^	def inorder_tree_walk(self):$/;"	m	class:Node
+inorder_tree_walk_stack	tree.py	/^	def inorder_tree_walk_stack(self):$/;"	m	class:Node
+insert	b_tree.py	/^	def insert(self, k):$/;"	m	class:b_tree
+insert	depth_tree.py	/^	def insert(self, z):$/;"	m	class:depth_tree
+insert	fibonacci_heap.py	/^	def insert(self, x):$/;"	m	class:fibonacci_heap
+insert	fibonacci_heap.py	/^	def insert(self, x):$/;"	m	class:fibonacci_node
+insert	interval_tree.py	/^	def insert(self, z):$/;"	m	class:interval_tree
+insert	largest_common_subsequence.py	/^	def insert(self, node):$/;"	m	class:tree
+insert	min_gap_tree.py	/^	def insert(self, z):$/;"	m	class:min_gap_tree
+insert	os_tree.py	/^	def insert(self, z):$/;"	m	class:os_tree
+insert	pointer_tree.py	/^	def insert(self, z):$/;"	m	class:pointer_tree
+insert	rank_tree.py	/^	def insert(self, z):$/;"	m	class:rank_tree
+insert	rb_tree.py	/^	def insert(self, z):$/;"	m	class:rb_tree
+insert	tree.py	/^	def insert(self, node):$/;"	m	class:Tree
+insert	vEB_tree.py	/^	def insert(self, x):$/;"	m	class:vEB_node
+insert_edge	single_edge.py	/^	def insert_edge(self, u, v):$/;"	m	class:graph
+insert_fixed	bh_tree.py	/^	def insert_fixed(self, z):$/;"	m	class:bh_tree
+insert_fixed	rb_tree.py	/^	def insert_fixed(self, z):$/;"	m	class:rb_tree
+insert_fixed_stack	rb_tree.py	/^	def insert_fixed_stack(self, z, s):$/;"	m	class:rb_tree
+insert_nonfull	b_tree.py	/^	def insert_nonfull(self, k):$/;"	m	class:b_tree_node
+insert_stack	rb_tree.py	/^	def insert_stack(self, z):$/;"	m	class:rb_tree
+insertionsort	insertion-sort-noninc.c	/^void insertionsort(int s[], int length) {$/;"	f
+insertionsort	insertion-sort.c	/^void insertionsort(int s[], int length) {$/;"	f
+interval	interval_tree.py	/^class interval(object):$/;"	c
+interval_graph_coloring	interval_graph_coloring.py	/^def interval_graph_coloring(graph):$/;"	f
+interval_node	interval_tree.py	/^class interval_node(rb_node):$/;"	c
+interval_tree	interval_tree.py	/^class interval_tree(rb_tree):$/;"	c
+inversion	inversion.c	/^int inversion(int A[], int first, int end) {$/;"	f
+inversion	inversion2.c	/^int inversion(int A[], int first, int end) {$/;"	f
+inversion	inversion_tree.py	/^def inversion(A):$/;"	f
+invs	inversion.c	/^static int invs = 0;$/;"	v	file:
+iterative_tree_search	rb_tree.py	/^	def iterative_tree_search(self, k):$/;"	m	class:rb_tree
+iterative_tree_search	tree.py	/^	def iterative_tree_search(self, k):$/;"	m	class:Node
+iterative_tree_search	tree.py	/^	def iterative_tree_search(self, k):$/;"	m	class:Tree
+ith_successor	os_tree.py	/^	def ith_successor(self, i):$/;"	m	class:os_node
+key_rank	os_tree.py	/^	def key_rank(self, k):$/;"	m	class:os_node
+knapsack_0_1	knapsack_0_1.py	/^def knapsack_0_1(W, w, v, m, n):$/;"	f
+knapsack_0_1_memoized	knapsack_0_1.py	/^def knapsack_0_1_memoized(W, w, v, m, n):$/;"	f
+knapsack_0_1_memoized_aux	knapsack_0_1.py	/^def knapsack_0_1_memoized_aux(W, w, v, m, n, c, b):$/;"	f
+kth_quantiles	kth-Quantiles.py	/^def kth_quantiles(A, B, k, p, r):$/;"	f
+largest_monotonically_increasing_subsequence	largest_common_subsequence.py	/^def largest_monotonically_increasing_subsequence(A):$/;"	f
+lcs_length	largest_common_subsequence.py	/^def lcs_length(X, Y):$/;"	f
+lcs_length_one_row	largest_common_subsequence.py	/^def lcs_length_one_row(X, Y):$/;"	f
+left	fibonacci_heap.py	/^	left = None$/;"	v	class:fibonacci_node
+left	graph.py	/^    def left(self, i):$/;"	m	class:min_heap
+left	heap.py	/^	def left(self, i):$/;"	m	class:max_heap
+left	heap.py	/^	def left(self, i):$/;"	m	class:min_heap
+left_rotate	depth_tree.py	/^	def left_rotate(self, x):$/;"	m	class:depth_tree
+left_rotate	interval_tree.py	/^	def left_rotate(self, x):$/;"	m	class:interval_tree
+left_rotate	min_gap_tree.py	/^	def left_rotate(self, x):$/;"	m	class:min_gap_tree
+left_rotate	os_tree.py	/^	def left_rotate(self, x):$/;"	m	class:os_tree
+left_rotate	pointer_tree.py	/^	def left_rotate(self, x):$/;"	m	class:pointer_tree
+left_rotate	rb_tree.py	/^	def left_rotate(self, x):$/;"	m	class:rb_tree
+line	auto.py	/^	line = f.readline()$/;"	v
+linear_probe	hash.py	/^def linear_probe(k, i):$/;"	f
+link	disjoint_sets_forest.py	/^	def link(self, y):$/;"	m	class:node
+link	fibonacci_heap.py	/^	def link(self, y, x):$/;"	m	class:fibonacci_heap
+list_all_overlapping_intervals	interval_tree.py	/^	def list_all_overlapping_intervals(self, i):$/;"	m	class:interval_tree
+lookup_chain	matrix_chain_order.py	/^def lookup_chain(m, p, i, j):$/;"	f
+low	maximum-subarray-brute-force.c	/^        int low;$/;"	m	struct:value	file:
+low	maximum-subarray-inline.c	/^        int low;$/;"	m	struct:value	file:
+low	maximum-subarray-recursive.c	/^	int low;$/;"	m	struct:value	file:
+low	vEB_tree.py	/^	def low(self, x):$/;"	m	class:vEB_node
+main	BinSearch.c	/^void main() {$/;"	f
+main	BinaryAdd.c	/^int main() {$/;"	f
+main	BubbleSort.c	/^int main() {$/;"	f
+main	Horner.c	/^int main() {$/;"	f
+main	Ins-Merge.c	/^int main()$/;"	f
+main	Ins-Merge2.c	/^int main()$/;"	f
+main	InsSort-BinSearch.c	/^int main()$/;"	f
+main	InsSort.c	/^void main()$/;"	f
+main	MergeSort.c	/^void main() {$/;"	f
+main	SeekSum.c	/^int main() {$/;"	f
+main	add.c	/^int main() {$/;"	f
+main	binsearch.c	/^void main() {$/;"	f
+main	insertion-sort-rec.c	/^int main()$/;"	f
+main	main.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	maximum-subarray-brute-force.c	/^int main() {$/;"	f
+main	maximum-subarray-inline.c	/^int main() {$/;"	f
+main	maximum-subarray-recursive.c	/^int main() {$/;"	f
+main	merge-sort.c	/^int main() {$/;"	f
+main	selection-sort.c	/^int main() {$/;"	f
+main	square-matrix-multiply-brute-force.c	/^int main() {$/;"	f
+mark	fibonacci_heap.py	/^	mark = False$/;"	v	class:fibonacci_node
+matrix_add	square-matrix-multiply-recursive.c	/^static void matrix_add(int *A, int *B, int *C, int row, int col) {$/;"	f	file:
+matrix_exp	matrix_pow.c	/^void matrix_exp(int *A, int *B, int n, int pow) {$/;"	f
+max_heap	heap.py	/^class max_heap(object):$/;"	c
+max_heap_insert	priority_queue.py	/^	def max_heap_insert(self, key):$/;"	m	class:max_priority_queue
+max_heapify	heap.py	/^	def max_heapify(self, i):$/;"	m	class:max_heap
+max_priority_queue	priority_queue.py	/^class max_priority_queue(max_heap):$/;"	c
+max_subsequence_sum	max_subsequence_sum.c	/^int max_subsequence_sum(int a[], unsigned n) {$/;"	f
+maximum	tree.py	/^	def maximum(self):$/;"	m	class:Node
+median_of_two_arrays	kth-Quantiles.py	/^def median_of_two_arrays(X, x_start, x_end, Y, y_start, y_end, size):$/;"	f
+member	vEB_tree.py	/^	def member(self, x):$/;"	m	class:vEB_node
+memoized_cut_rod	cut_rod.py	/^def memoized_cut_rod(p, n):$/;"	f
+memoized_cut_rod	memoized_cut_rod.py	/^def memoized_cut_rod(p, n):$/;"	f
+memoized_cut_rod_aux	cut_rod.py	/^def memoized_cut_rod_aux(p, n, r):$/;"	f
+memoized_cut_rod_aux	memoized_cut_rod.py	/^def memoized_cut_rod_aux(p, n, r):$/;"	f
+memoized_matrix_chain_order	matrix_chain_order.py	/^def memoized_matrix_chain_order(p):$/;"	f
+merge	b_tree.py	/^	def merge(self, tree, i):$/;"	m	class:b_tree_node
+merge	merge-sort.c	/^void merge(int a[], int begin, int middle, int end) {$/;"	f
+merge_sort	merge-sort.c	/^void merge_sort(int a[], int start, int end) {$/;"	f
+min_gap_node	min_gap_tree.py	/^class min_gap_node(rb_node):$/;"	c
+min_gap_tree	min_gap_tree.py	/^class min_gap_tree(rb_tree):$/;"	c
+min_heap	graph.py	/^class min_heap(list):$/;"	c
+min_heap	heap.py	/^class min_heap(list):$/;"	c
+min_heap_insert	graph.py	/^    def min_heap_insert(self, key):$/;"	m	class:min_priority_queue
+min_heap_insert	huffman.py	/^	def min_heap_insert(self, key):$/;"	m	class:Min_priority_queue
+min_heap_insert	priority_queue.py	/^	def min_heap_insert(self, key):$/;"	m	class:min_priority_queue
+min_heapify	graph.py	/^    def min_heapify(self, i):$/;"	m	class:min_heap
+min_heapify	heap.py	/^	def min_heapify(self, i):$/;"	m	class:min_heap
+min_priority_queue	graph.py	/^class min_priority_queue(min_heap):$/;"	c
+min_priority_queue	priority_queue.py	/^class min_priority_queue(min_heap):$/;"	c
+minimum	fibonacci_heap.py	/^	def minimum(self):$/;"	m	class:fibonacci_heap
+minimum	tree.py	/^	def minimum(self):$/;"	m	class:Node
+multipop	stack.py	/^	def multipop(self, k):$/;"	m	class:stack
+negative_infinity	pointer_tree.py	/^	negative_infinity = pointer_node(float("-Inf"), None, None, None, 1, None, None, None, None)$/;"	v	class:pointer_tree
+next	fibonacci_heap.py	/^	def next(self):$/;"	m	class:fibonacci_heap
+next	fibonacci_heap.py	/^	def next(self):$/;"	m	class:fibonacci_node
+nil	bh_tree.py	/^	nil = bh_node(None, None, None, None, 1, 0)$/;"	v	class:bh_tree
+nil	depth_tree.py	/^	nil = depth_node(None, None, None, None, 1, -1)$/;"	v	class:depth_tree
+nil	interval_tree.py	/^	nil = interval_node(None, None, None, None, 1, None, float("-Inf"))$/;"	v	class:interval_tree
+nil	min_gap_tree.py	/^	nil = min_gap_node(None, None, None, None, 1, positive_infinity, float("Inf"))$/;"	v	class:min_gap_tree
+nil	os_tree.py	/^	nil = os_node(None, None, None, None, 1, 0)$/;"	v	class:os_tree
+nil	pointer_tree.py	/^	nil = pointer_node(None, None, None, None, 1, negative_infinity, positive_infinity, None, None)$/;"	v	class:pointer_tree
+nil	rank_tree.py	/^	nil = rank_node(None, None, None, None, 1, 0)$/;"	v	class:rank_tree
+nil	rb_tree.py	/^	nil = rb_node(None, None, None, None, 1)$/;"	v	class:rb_tree
+node	disjoint_sets_forest.py	/^class node(object):$/;"	c
+node	disjoint_sets_linked_list.py	/^class node(object):$/;"	c
+node	huffman.py	/^class node(object):$/;"	c
+node	single_edge.py	/^class node(object):$/;"	c
+node_notail	disjoint_sets_linked_list.py	/^class node_notail(node):$/;"	c
+open_interval_search	interval_tree.py	/^	def open_interval_search(self, interval):$/;"	m	class:interval_tree
+optimal_bst	optimal_binary_search_tree.py	/^def optimal_bst(p, q, n):$/;"	f
+os_node	os_tree.py	/^class os_node(rb_node):$/;"	c
+os_tree	os_tree.py	/^class os_tree(rb_tree):$/;"	c
+p	fibonacci_heap.py	/^	p = None$/;"	v	class:fibonacci_node
+parent	graph.py	/^    def parent(self, i):$/;"	m	class:min_heap
+parent	heap.py	/^	def parent(self, i):$/;"	m	class:max_heap
+parent	heap.py	/^	def parent(self, i):$/;"	m	class:min_heap
+partition	kth-Quantiles.py	/^def partition(A, p, r):$/;"	f
+partition	quicksort.py	/^def partition(A, p, r):$/;"	f
+partition	randomized_select.py	/^def partition(A, p, r):$/;"	f
+path_num	graph.py	/^    def path_num(self, s, t):$/;"	m	class:Graph
+path_num_aux	graph.py	/^    def path_num_aux(self, s, t):$/;"	m	class:Graph
+pointer_node	pointer_tree.py	/^class pointer_node(rb_node):$/;"	c
+pointer_tree	pointer_tree.py	/^class pointer_tree(rb_tree):$/;"	c
+positive_infinity	min_gap_tree.py	/^	positive_infinity = min_gap_node(float("Inf"), None, None, None, 1, None, float("Inf"))$/;"	v	class:min_gap_tree
+positive_infinity	pointer_tree.py	/^	positive_infinity = pointer_node(float("Inf"), None, None, None, 1, None, None, None, None)$/;"	v	class:pointer_tree
+postorder_tree_walk	tree.py	/^	def postorder_tree_walk(self):$/;"	m	class:Node
+pow1	pow.c	/^int pow1(int x, unsigned n) {$/;"	f
+pow2	pow.c	/^int pow2(int x, unsigned n) {$/;"	f
+predecessor	b_tree.py	/^	def predecessor(self, k):$/;"	m	class:b_tree
+predecessor	min_gap_tree.py	/^	def predecessor(self, x):$/;"	m	class:min_gap_tree
+predecessor	tree.py	/^	def predecessor(self):$/;"	m	class:Node
+preorder_tree_walk	tree.py	/^	def preorder_tree_walk(self):$/;"	m	class:Node
+printAllEdges	graph.py	/^    def printAllEdges(self):$/;"	m	class:Graph
+printAllEdges_aux	graph.py	/^    def printAllEdges_aux(self, u):$/;"	m	class:Graph
+printEdge	graph.py	/^    def printEdge(self, u):$/;"	m	class:Graph
+printVertices	graph.py	/^    def printVertices(self):$/;"	m	class:Graph
+print_activity	activity_selection.py	/^def print_activity(activities):$/;"	f
+print_activity_aux	activity_selection.py	/^def print_activity_aux(activities, m, n):$/;"	f
+print_b_tree	b_tree.py	/^	def print_b_tree(self):$/;"	m	class:b_tree
+print_bits	binary_counter.py	/^	def print_bits(self):$/;"	m	class:binary_counter
+print_child_first	b_tree.py	/^	def print_child_first(self):$/;"	m	class:b_tree_node
+print_code	huffman.py	/^def print_code(root):$/;"	f
+print_code_aux	huffman.py	/^def print_code_aux(node, s):$/;"	f
+print_cut_rod_solution	cut_rod.py	/^def print_cut_rod_solution(p, n, cut):$/;"	f
+print_cut_rod_solution	extended_bottom_up_cut_rod.py	/^def print_cut_rod_solution(p, n):$/;"	f
+print_graph	single_edge.py	/^	def print_graph(self):$/;"	m	class:graph
+print_huffman_tenary	huffman.py	/^def print_huffman_tenary(root):$/;"	f
+print_huffman_tenary_aux	huffman.py	/^def print_huffman_tenary_aux(node, string, sibling):$/;"	f
+print_inorder	b_tree.py	/^	def print_inorder(self):$/;"	m	class:b_tree_node
+print_knapsack_solution	knapsack_0_1.py	/^def print_knapsack_solution(b, w):$/;"	f
+print_lcs	largest_common_subsequence.py	/^def print_lcs(b, X, i, j):$/;"	f
+print_optimal_parens	matrix_chain_order.py	/^def print_optimal_parens(s, i, j):$/;"	f
+print_path	graph.py	/^    def print_path(self, v):$/;"	m	class:Vertex
+print_set	disjoint_sets_forest.py	/^	def print_set(self):$/;"	m	class:node
+print_set_aux	disjoint_sets_forest.py	/^	def print_set_aux(self):$/;"	m	class:node
+print_veb	vEB_tree.py	/^	def print_veb(self):$/;"	m	class:vEB_node
+push	stack.py	/^	def push(self, key):$/;"	m	class:stack
+qsort	qsort.c	/^void qsort(int v[], int left, int right) {$/;"	f
+quad_probe	hash.py	/^def quad_probe(k, i):$/;"	f
+queue	queue.py	/^class queue(object):$/;"	c
+quicksort	quicksort.py	/^def quicksort(A, p, r):$/;"	f
+randomized_partition	kth-Quantiles.py	/^def randomized_partition(A, p, r):$/;"	f
+randomized_partition	randomized_select.py	/^def randomized_partition(A, p, r):$/;"	f
+randomized_quicksort	kth-Quantiles.py	/^def randomized_quicksort(A, p, r):$/;"	f
+randomized_select	kth-Quantiles.py	/^def randomized_select(A, p, r, i):$/;"	f
+randomized_select	randomized_select.py	/^def randomized_select(A, p, r, i):$/;"	f
+rank	os_tree.py	/^	def rank(self, x):$/;"	m	class:os_tree
+rank_node	rank_tree.py	/^class rank_node(rb_node):$/;"	c
+rank_tree	rank_tree.py	/^class rank_tree(rb_tree):$/;"	c
+rb_node	rb_tree.py	/^class rb_node(Node):$/;"	c
+rb_tree	rb_tree.py	/^class rb_tree(Tree):$/;"	c
+recursive_activity_selector	activity_selection.py	/^def recursive_activity_selector(s, f, n):$/;"	f
+recursive_activity_selector_aux	activity_selection.py	/^def recursive_activity_selector_aux(s, f, k, n):$/;"	f
+relax	graph.py	/^    def relax(self, u, v, w):$/;"	m	class:Graph
+relax_modified	graph.py	/^    def relax_modified(self, u, v, w):$/;"	m	class:Graph
+remove	fibonacci_heap.py	/^	def remove(self):$/;"	m	class:fibonacci_node
+remove_child	fibonacci_heap.py	/^	def remove_child(self, y):$/;"	m	class:fibonacci_node
+reset	binary_counter.py	/^	def reset(self):$/;"	m	class:binary_counter
+right	fibonacci_heap.py	/^	right = None$/;"	v	class:fibonacci_node
+right	graph.py	/^    def right(self, i):$/;"	m	class:min_heap
+right	heap.py	/^	def right(self, i):$/;"	m	class:max_heap
+right	heap.py	/^	def right(self, i):$/;"	m	class:min_heap
+right_rotate	depth_tree.py	/^	def right_rotate(self, y):$/;"	m	class:depth_tree
+right_rotate	interval_tree.py	/^	def right_rotate(self, y):$/;"	m	class:interval_tree
+right_rotate	min_gap_tree.py	/^	def right_rotate(self, y):$/;"	m	class:min_gap_tree
+right_rotate	os_tree.py	/^	def right_rotate(self, y):$/;"	m	class:os_tree
+right_rotate	pointer_tree.py	/^	def right_rotate(self, y):$/;"	m	class:pointer_tree
+right_rotate	rb_tree.py	/^	def right_rotate(self, y):$/;"	m	class:rb_tree
+root	bh_tree.py	/^	root = nil$/;"	v	class:bh_tree
+root	depth_tree.py	/^	root = nil$/;"	v	class:depth_tree
+root	interval_tree.py	/^	root = nil$/;"	v	class:interval_tree
+root	min_gap_tree.py	/^	root = nil$/;"	v	class:min_gap_tree
+root	os_tree.py	/^	root = nil$/;"	v	class:os_tree
+root	pointer_tree.py	/^	root = nil$/;"	v	class:pointer_tree
+root	rank_tree.py	/^	root = nil$/;"	v	class:rank_tree
+root	rb_tree.py	/^	root = nil$/;"	v	class:rb_tree
+root	tree.py	/^	root = None$/;"	v	class:Tree
+search	b_tree.py	/^	def search(self, k):$/;"	m	class:b_tree_node
+select_iterative	os_tree.py	/^	def select_iterative(self, i):$/;"	m	class:os_node
+select_recursive	os_tree.py	/^	def select_recursive(self, i):$/;"	m	class:os_node
+semiconnected	graph.py	/^    def semiconnected(self):$/;"	m	class:Graph
+simplified	graph.py	/^    def simplified(self):$/;"	m	class:Graph
+simplified_dfs	graph.py	/^    def simplified_dfs(self):$/;"	m	class:Graph
+simplified_dfs_visit	graph.py	/^    def simplified_dfs_visit(self, u, stack, s):$/;"	m	class:Graph
+single_edge	single_edge.py	/^	def single_edge(self):$/;"	m	class:graph
+split_child	b_tree.py	/^	def split_child(self, i):$/;"	m	class:b_tree_node
+square	single_edge.py	/^	def square(self):$/;"	m	class:graph
+square_matrix_multiply	square-matrix-multiply-Strassen.py	/^def square_matrix_multiply(A, B):$/;"	f
+square_matrix_multiply	square-matrix-multiply-brute-force.c	/^void square_matrix_multiply(int *a, int *b, int *c, int n) {$/;"	f
+square_matrix_multiply	square-matrix-multiply-brute-force2.c	/^void square_matrix_multiply(int a[][RANK], int b[][RANK], int c[][RANK]) {$/;"	f
+square_matrix_multiply	square-matrix-multiply-recursive.c	/^void square_matrix_multiply(int *A, int *B, int *C, int n) {$/;"	f
+stack	stack.py	/^class stack(list):$/;"	c
+strongly_connected_components	graph.py	/^    def strongly_connected_components(self):$/;"	m	class:Graph
+strongly_connected_components_dfs_visit	graph.py	/^    def strongly_connected_components_dfs_visit(self, u):$/;"	m	class:Graph
+submatrix_init	square-matrix-multiply-recursive.c	/^static void submatrix_init(int *S, int S_row, int S_col, int *T, int T_row, int T_col, int row_start, int col_start) {$/;"	f	file:
+successor	tree.py	/^	def successor(self):$/;"	m	class:Node
+successor	vEB_tree.py	/^	def successor(self, x):$/;"	m	class:vEB_node
+sum	maximum-subarray-brute-force.c	/^        int sum;$/;"	m	struct:value	file:
+sum	maximum-subarray-inline.c	/^        int sum;$/;"	m	struct:value	file:
+sum	maximum-subarray-recursive.c	/^	int sum;$/;"	m	struct:value	file:
+swap	Fibonacci.c	/^void swap(int *x, int *y) {$/;"	f
+swap	InsSort-BinSearch.c	/^void swap(int *a, int *b)$/;"	f
+swap	insertion-sort-rec.c	/^void swap(int *a, int *b)$/;"	f
+swap	qsort.c	/^void swap(int v[], int i, int j) {$/;"	f
+swap	quicksort.py	/^def swap(x, y): $/;"	f
+t	b_tree_test.py	/^t = bt.b_tree(3)$/;"	v
+tenary_node	huffman.py	/^class tenary_node(object):$/;"	c
+testAdd	no_test.py	/^	def testAdd(self):  ## test method names begin 'test*'$/;"	m	class:IntegerArithmenticTestCase
+testBellmanFord	graph_test.py	/^    def testBellmanFord(self):$/;"	m	class:TestGraph
+testBellmanFordModified	graph_test.py	/^    def testBellmanFordModified(self):$/;"	m	class:TestGraph
+testBfs	graph_test.py	/^    def testBfs(self):$/;"	m	class:TestGraph
+testBfs	wrestlers_test.py	/^	def testBfs(self):$/;"	m	class:TestWrestler
+testComponentGraph	graph_test.py	/^    def testComponentGraph(self):$/;"	m	class:TestGraph
+testCut	graph_test.py	/^    def testCut(self):$/;"	m	class:TestGraph
+testDagShortestPaths	graph_test.py	/^    def testDagShortestPaths(self):$/;"	m	class:TestGraph
+testDfs	graph_test.py	/^    def testDfs(self):$/;"	m	class:TestGraph
+testKruskal	graph_test.py	/^    def testKruskal(self):$/;"	m	class:TestGraph
+testMultiply	no_test.py	/^	def testMultiply(self):$/;"	m	class:IntegerArithmenticTestCase
+testPathNum	graph_test.py	/^    def testPathNum(self):$/;"	m	class:TestGraph
+testPrim	graph_test.py	/^    def testPrim(self):$/;"	m	class:TestGraph
+testSCC	graph_test.py	/^    def testSCC(self):$/;"	m	class:TestGraph
+testSemiconnected	graph_test.py	/^    def testSemiconnected(self):$/;"	m	class:TestGraph
+testSimplified	graph_test.py	/^    def testSimplified(self):$/;"	m	class:TestGraph
+testTopologicalSort	graph_test.py	/^    def testTopologicalSort(self):$/;"	m	class:TestGraph
+testTotalPathNumber	graph_test.py	/^    def testTotalPathNumber(self):$/;"	m	class:TestGraph
+test_bottom_up_cut_rod	cut_rod_test.py	/^	def test_bottom_up_cut_rod(self):$/;"	m	class:TestCutRod
+test_bottom_up_cut_rod_two_subproblem	cut_rod_test.py	/^	def test_bottom_up_cut_rod_two_subproblem(self):$/;"	m	class:TestCutRod
+test_bottom_up_cut_rod_with_fixed_cut_cost	cut_rod_test.py	/^	def test_bottom_up_cut_rod_with_fixed_cut_cost(self):$/;"	m	class:TestCutRod
+test_build_max_heap	heap_test.py	/^	def test_build_max_heap(self):$/;"	m	class:TestHeap
+test_build_min_heap	heap_test.py	/^	def test_build_min_heap(self):$/;"	m	class:TestHeap
+test_counting_sort	counting_sort_test.py	/^	def test_counting_sort(self):$/;"	m	class:TestHeap
+test_delete_five	bh_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestRbtree
+test_delete_five	depth_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestRbtree
+test_delete_five	interval_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestIntervalTree
+test_delete_five	min_gap_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestMinGapTree
+test_delete_five	os_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestOstree
+test_delete_five	pointer_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestOstree
+test_delete_five	rank_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestOstree
+test_delete_five	rb_tree_test.py	/^	def test_delete_five(self):$/;"	m	class:TestRbtree
+test_delete_four	bh_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestRbtree
+test_delete_four	depth_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestRbtree
+test_delete_four	interval_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestIntervalTree
+test_delete_four	min_gap_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestMinGapTree
+test_delete_four	os_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestOstree
+test_delete_four	pointer_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestOstree
+test_delete_four	rank_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestOstree
+test_delete_four	rb_tree_test.py	/^	def test_delete_four(self):$/;"	m	class:TestRbtree
+test_delete_one	bh_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestRbtree
+test_delete_one	depth_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestRbtree
+test_delete_one	interval_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestIntervalTree
+test_delete_one	min_gap_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestMinGapTree
+test_delete_one	os_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestOstree
+test_delete_one	pointer_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestOstree
+test_delete_one	rank_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestOstree
+test_delete_one	rb_tree_test.py	/^	def test_delete_one(self):$/;"	m	class:TestRbtree
+test_delete_six	bh_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestRbtree
+test_delete_six	depth_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestRbtree
+test_delete_six	interval_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestIntervalTree
+test_delete_six	min_gap_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestMinGapTree
+test_delete_six	os_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestOstree
+test_delete_six	pointer_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestOstree
+test_delete_six	rank_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestOstree
+test_delete_six	rb_tree_test.py	/^	def test_delete_six(self):$/;"	m	class:TestRbtree
+test_delete_three	bh_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestRbtree
+test_delete_three	depth_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestRbtree
+test_delete_three	interval_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestIntervalTree
+test_delete_three	min_gap_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestMinGapTree
+test_delete_three	os_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestOstree
+test_delete_three	pointer_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestOstree
+test_delete_three	rank_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestOstree
+test_delete_three	rb_tree_test.py	/^	def test_delete_three(self):$/;"	m	class:TestRbtree
+test_delete_two	bh_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestRbtree
+test_delete_two	depth_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestRbtree
+test_delete_two	interval_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestIntervalTree
+test_delete_two	min_gap_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestMinGapTree
+test_delete_two	os_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestOstree
+test_delete_two	pointer_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestOstree
+test_delete_two	rank_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestOstree
+test_delete_two	rb_tree_test.py	/^	def test_delete_two(self):$/;"	m	class:TestRbtree
+test_forest	disjoint_sets_forest_test.py	/^	def test_forest(self):$/;"	m	class:TestDisjointSets
+test_heap_decrease_key	priority_queue_test.py	/^	def test_heap_decrease_key(self):$/;"	m	class:TestMinPriorityQueue
+test_heap_extract_max	priority_queue_test.py	/^	def test_heap_extract_max(self):$/;"	m	class:TestMaxPriorityQueue
+test_heap_extract_min	priority_queue_test.py	/^	def test_heap_extract_min(self):$/;"	m	class:TestMinPriorityQueue
+test_heap_increase_key	priority_queue_test.py	/^	def test_heap_increase_key(self):$/;"	m	class:TestMaxPriorityQueue
+test_heap_insert	priority_queue_test.py	/^	def test_heap_insert(self):$/;"	m	class:TestMaxPriorityQueue
+test_heap_insert	priority_queue_test.py	/^	def test_heap_insert(self):$/;"	m	class:TestMinPriorityQueue
+test_heap_maximum	priority_queue_test.py	/^	def test_heap_maximum(self):$/;"	m	class:TestMaxPriorityQueue
+test_heap_minimum	priority_queue_test.py	/^	def test_heap_minimum(self):$/;"	m	class:TestMinPriorityQueue
+test_heapsort	heap_test.py	/^	def test_heapsort(self):$/;"	m	class:TestHeap
+test_init	priority_queue_test.py	/^	def test_init(self):$/;"	m	class:TestMaxPriorityQueue
+test_init	priority_queue_test.py	/^	def test_init(self):$/;"	m	class:TestMinPriorityQueue
+test_insert_five	bh_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestRbtree
+test_insert_five	depth_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestRbtree
+test_insert_five	min_gap_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestMinGapTree
+test_insert_five	os_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestOstree
+test_insert_five	pointer_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestOstree
+test_insert_five	rank_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestOstree
+test_insert_five	rb_tree_test.py	/^	def test_insert_five(self):$/;"	m	class:TestRbtree
+test_insert_four	bh_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestRbtree
+test_insert_four	depth_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestRbtree
+test_insert_four	min_gap_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestMinGapTree
+test_insert_four	os_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestOstree
+test_insert_four	pointer_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestOstree
+test_insert_four	rank_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestOstree
+test_insert_four	rb_tree_test.py	/^	def test_insert_four(self):$/;"	m	class:TestRbtree
+test_insert_one	bh_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestRbtree
+test_insert_one	depth_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestRbtree
+test_insert_one	interval_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestIntervalTree
+test_insert_one	min_gap_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestMinGapTree
+test_insert_one	os_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestOstree
+test_insert_one	pointer_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestOstree
+test_insert_one	rank_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestOstree
+test_insert_one	rb_tree_test.py	/^	def test_insert_one(self):$/;"	m	class:TestRbtree
+test_insert_six	bh_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestRbtree
+test_insert_six	depth_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestRbtree
+test_insert_six	min_gap_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestMinGapTree
+test_insert_six	os_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestOstree
+test_insert_six	pointer_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestOstree
+test_insert_six	rank_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestOstree
+test_insert_six	rb_tree_test.py	/^	def test_insert_six(self):$/;"	m	class:TestRbtree
+test_insert_three	bh_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestRbtree
+test_insert_three	depth_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestRbtree
+test_insert_three	min_gap_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestMinGapTree
+test_insert_three	os_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestOstree
+test_insert_three	pointer_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestOstree
+test_insert_three	rank_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestOstree
+test_insert_three	rb_tree_test.py	/^	def test_insert_three(self):$/;"	m	class:TestRbtree
+test_insert_two	bh_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestRbtree
+test_insert_two	depth_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestRbtree
+test_insert_two	min_gap_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestMinGapTree
+test_insert_two	os_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestOstree
+test_insert_two	pointer_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestOstree
+test_insert_two	rank_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestOstree
+test_insert_two	rb_tree_test.py	/^	def test_insert_two(self):$/;"	m	class:TestRbtree
+test_ith_successor	os_tree_test.py	/^	def test_ith_successor(self):$/;"	m	class:TestOstree
+test_key_rank	os_tree_test.py	/^	def test_key_rank(self):$/;"	m	class:TestOstree
+test_largest_monotonically_increasing_subsequence	largest_common_subsequence_test.py	/^	def test_largest_monotonically_increasing_subsequence(self):$/;"	m	class:TestLCS
+test_lcs_length	largest_common_subsequence_test.py	/^	def test_lcs_length(self):$/;"	m	class:TestLCS
+test_lcs_length_one_row	largest_common_subsequence_test.py	/^	def test_lcs_length_one_row(self):$/;"	m	class:TestLCS
+test_linked_lists_no_tail	disjoint_sets_test.py	/^	def test_linked_lists_no_tail(self):$/;"	m	class:TestDisjointSets
+test_linked_lists_with_head_and_tail	disjoint_sets_test.py	/^	def test_linked_lists_with_head_and_tail(self):$/;"	m	class:TestDisjointSets
+test_max_heapify	heap_test.py	/^	def test_max_heapify(self):$/;"	m	class:TestHeap
+test_memoized_cut_rod	cut_rod_test.py	/^	def test_memoized_cut_rod(self):$/;"	m	class:TestCutRod
+test_min_heapify	heap_test.py	/^	def test_min_heapify(self):$/;"	m	class:TestHeap
+test_partition	quicksort_test.py	/^	def test_partition(self):$/;"	m	class:TestHeap
+test_print_rod_solution	cut_rod_test.py	/^	def test_print_rod_solution(self):$/;"	m	class:TestCutRod
+test_quicksort	quicksort_test.py	/^	def test_quicksort(self):$/;"	m	class:TestHeap
+test_randomize_select_distinct	randomized_select_test.py	/^	def test_randomize_select_distinct(self):$/;"	m	class:TestRandSelect
+test_randomize_select_duplicate	randomized_select_test.py	/^	def test_randomize_select_duplicate(self):$/;"	m	class:TestRandSelect
+test_rank	os_tree_test.py	/^	def test_rank(self):$/;"	m	class:TestOstree
+test_select	os_tree_test.py	/^	def test_select(self):$/;"	m	class:TestOstree
+test_universal_sink	universal_sink_test.py	/^	def test_universal_sink(self):$/;"	m	class:TestRbtree
+to_matrix	square-matrix-multiply-recursive.c	/^static void to_matrix(int *S, int S_row, int S_col, int *M, int M_row, int M_col, int row_start, int col_start) {$/;"	f	file:
+topological_sort	graph.py	/^    def topological_sort(self):$/;"	m	class:Graph
+total_path_number	graph.py	/^    def total_path_number(self):$/;"	m	class:Graph
+transplant	rb_tree.py	/^	def transplant(self, u, v):$/;"	m	class:rb_tree
+transplant	tree.py	/^	def transplant(self, u, v):$/;"	m	class:Tree
+transpose	graph.py	/^    def transpose(self):$/;"	m	class:Graph
+transpose	single_edge.py	/^	def transpose(self):$/;"	m	class:graph
+tree	largest_common_subsequence.py	/^class tree(Tree):$/;"	c
+u	test.py	/^u = Vertex('u')$/;"	v
+union	disjoint_sets_forest.py	/^	def union(self, y):$/;"	m	class:node
+union	disjoint_sets_linked_list.py	/^	def union(self, y):$/;"	m	class:node
+union	disjoint_sets_linked_list.py	/^	def union(self, y):$/;"	m	class:node_notail
+union	fibonacci_heap.py	/^	def union(self, h):$/;"	m	class:fibonacci_heap
+union	single_edge.py	/^	def union(self, g):$/;"	m	class:graph
+universal_sink	universal_sink.py	/^def universal_sink(M):$/;"	f
+universal_sink_aux	universal_sink.py	/^def universal_sink_aux(M, i):$/;"	f
+update_depth_whole_tree	depth_tree.py	/^	def update_depth_whole_tree(self, amount):$/;"	m	class:depth_node
+update_rank_whole_tree	rank_tree.py	/^	def update_rank_whole_tree(self, amount):$/;"	m	class:rank_node
+v	b_tree_test.py	/^v = bt.b_tree_node(3, False, 2)$/;"	v
+v	test.py	/^v = Vertex('v')$/;"	v
+vEB_node	vEB_tree.py	/^class vEB_node(object):$/;"	c
+value	maximum-subarray-brute-force.c	/^struct value {$/;"	s	file:
+value	maximum-subarray-inline.c	/^struct value {$/;"	s	file:
+value	maximum-subarray-recursive.c	/^struct value {$/;"	s	file:
+vertices	test.py	/^vertices = [u, v, w, z]$/;"	v
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testBellmanFord
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testBellmanFordModified
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testCut
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testDagShortestPaths
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testKruskal
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testPrim
+w	graph_test.py	/^        def w(x, y):$/;"	f	function:TestGraph.testTopologicalSort
+w	test.py	/^w = Vertex('w')$/;"	v
+wrap	bh_tree_test.py	/^	def wrap(self, tree, node, bh):$/;"	m	class:TestRbtree
+wrap	depth_tree_test.py	/^	def wrap(self, tree, node, depth):$/;"	m	class:TestRbtree
+wrap	interval_tree_test.py	/^	def wrap(self, tree, node, maximum):$/;"	m	class:TestIntervalTree
+wrap	min_gap_tree_test.py	/^	def wrap(self, tree, node, min_gap):$/;"	m	class:TestMinGapTree
+wrap	os_tree_test.py	/^	def wrap(self, tree, node, left, right, p, color, size):$/;"	m	class:TestOstree
+wrap	pointer_tree_test.py	/^	def wrap(self, tree, node, minimum, maximum, predecessor, successor):$/;"	m	class:TestOstree
+wrap	rank_tree_test.py	/^	def wrap(self, tree, node, left, right, p, color, rank):$/;"	m	class:TestOstree
+wrap	rb_tree_test.py	/^	def wrap(self, tree, node, left, right, p, color):$/;"	m	class:TestRbtree
+wrestlers	wrestlers.py	/^def wrestlers(g):$/;"	f
+x	b_tree_test.py	/^x = bt.b_tree_node(3, True, 3)$/;"	v
+y	b_tree_test.py	/^y = bt.b_tree_node(3, True, 2)$/;"	v
+z	b_tree_test.py	/^z = bt.b_tree_node(3, True, 2)$/;"	v
+z	test.py	/^z = Vertex('z')$/;"	v
