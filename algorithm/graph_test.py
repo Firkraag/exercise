@@ -417,3 +417,21 @@ class TestGraph(unittest.TestCase):
         number = G.total_path_number()
         self.assertEquals([i.num for i in vertices], [21, 12, 7, 3, 1, 0])
         self.assertEquals(number, 44)
+    def testDijkstra(self):
+        s = Vertex('s')
+        t = Vertex('t')
+        x = Vertex('x')
+        y = Vertex('y')
+        z = Vertex('z')
+        vertices = [s, t, x, y, z]
+        edges = [(s, t), (s, y), (t, x), (t, y), (x, z), (y, t), (y, x), (y, z), (z, s), (z, x)]
+        g = Graph(vertices, edges)
+        weight = [10, 5, 1, 2, 4, 3, 9, 2, 7, 6]
+        we = dict()
+        for i,j in zip(edges, weight):
+            we[i] = j    
+        def w(x, y):
+            return we[(x, y)]        
+        g.Dijkstra(w, s)
+        self.assertEquals([i.p for i in vertices], [None, y, t, s, y])
+        self.assertEquals([i.d for i in vertices], [0, 8, 9, 5, 7])

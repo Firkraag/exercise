@@ -1,5 +1,5 @@
 from queue import queue
-#from priority_queue import min_priority_queue
+from priority_queue import min_priority_queue
 from disjoint_sets_forest import node as dsf_node
 import math
 
@@ -106,10 +106,15 @@ import math
 #                self.max = self.index(self.high(x), self.cluster[self.high(x)].max)
 #        self.size = self.size - 1
 class min_heap(list):
-    def __init__(self, data):
+    def __init__(self, data, attr):
+        '''
+        data: input data for heap
+        attr: the attribute of input date used as compare key
+        '''
         list.__init__(self, data)
         for i in range(0, len(data)):
             self[i].index = i
+        self.attr = attr
         self.length = len(data)
         self.heap_size = self.length
         self.build_min_heap()
@@ -124,11 +129,11 @@ class min_heap(list):
     def min_heapify(self, i):
         l = self.left(i)
         r = self.right(i)
-        if (l <= (self.heap_size - 1)) and (self[l].weight < self[i].weight):
+        if (l <= (self.heap_size - 1)) and (self[l].__dict__[self.attr] < self[i].__dict__[self.attr]):
             smallest = l
         else:
             smallest = i
-        if (r <= (self.heap_size - 1)) and (self[r].weight < self[smallest].weight):
+        if (r <= (self.heap_size - 1)) and (self[r].__dict__[self.attr] < self[smallest].__dict__[self.attr]):
             smallest = r
         if     smallest != i:
             self[i],self[smallest] = self[smallest],self[i]
@@ -152,10 +157,10 @@ class min_priority_queue(min_heap):
         self.min_heapify(0)
         return minimum
     def heap_decrease_key(self, i, key):
-        if key > self[i].weight:
+        if key > self[i].__dict__[self.attr]:
             sys.exit("new key is larger than current key")
-        self[i].weight = key
-        while i > 0 and self[self.parent(i)].weight > self[i].weight:
+        self[i].__dict__[self.attr] = key
+        while i > 0 and self[self.parent(i)].__dict__[self.attr] > self[i].__dict__[self.attr]:
             self[i],self[self.parent(i)] = self[self.parent(i)], self[i]
             self[i].index = i
             self[self.parent(i)].index = self.parent(i)
@@ -428,7 +433,7 @@ class Graph(object):
         y.weight = 0
         x.root = x
         y.root = y
-        q = min_priority_queue(self.vertices)
+        q = min_priority_queue(self.vertices, 'weight')
         while q.heap_size > 0:
             u = q.heap_extract_min()
             for v in self.adj[u]:
@@ -480,7 +485,7 @@ class Graph(object):
             v.weight = float("Inf")
             v.p = None
         r.weight = 0
-        q = min_priority_queue(self.vertices)
+        q = min_priority_queue(self.vertices, 'weight')
         while q.heap_size > 0:
             u = q.heap_extract_min()
             for v in self.adj[u]:
@@ -637,3 +642,20 @@ class Graph(object):
         u.color = 2
         time = time + 1
         u.f = time
+    def Dijkstra(self, w, s):
+        '''
+        Dijkstra's algorithm solves the single-source shortest-paths problem
+        on a weighted, directed graph G = (V, E) for the case in which all edge
+        weights are nonnegative.
+        '''
+        self.initialize_signle_source(s)
+        S = set()
+        Q = min_priority_queue(self.vertices, 'd')
+        while Q.heap_size > 0:
+            u = Q.heap_extract_min()
+            S = S.union({u})
+            for v in self.adj[u]:
+                if v.d > u.d + w(u, v):
+                    v.d = u.d + w(u, v)
+                    v.p = u
+                    Q.heap_decrease_key(v.index, u.d + w(u, v))
