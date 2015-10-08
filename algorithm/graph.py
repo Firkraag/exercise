@@ -105,6 +105,62 @@ import math
 #            elif x == self.max:
 #                self.max = self.index(self.high(x), self.cluster[self.high(x)].max)
 #        self.size = self.size - 1
+class max_heap(list):
+    def __init__(self, data, attr):
+        list.__init__(self, data)
+        for i in range(0, len(data)):
+            self[i].index = i
+        self.length = len(data)
+        self.attr = attr
+        self.heap_size = self.length
+        self.build_max_heap()
+    def __contains__(self, y):
+        return y in self[0:self.heap_size]
+    def left(self, i):
+        return 2 * i + 1
+    def right(self, i):
+        return 2 * i + 2
+    def parent(self, i):
+        return (i - 1) / 2
+    def max_heapify(self, i):
+        l = self.left(i)
+        r = self.right(i)
+        if (l <= (self.heap_size - 1)) and (self[l].__dict__[self.attr] > self[i].__dict__[self.attr]):
+            largest = l
+        else:
+            largest = i
+        if (r <= (self.heap_size - 1)) and (self[r].__dict__[self.attr] > self[largest].__dict__[self.attr]):
+            largest = r
+        if     largest != i:
+            self[i],self[largest] = self[largest],self[i]
+            self[i].index = i
+            self[largest].index = largest
+            self.max_heapify(largest)
+    def build_max_heap(self):
+        self.heap_size = self.length
+        for i in range(self.length / 2 - 1, -1, -1):
+            self.max_heapify(i)
+class max_priority_queue(max_heap):
+    def heap_maximum(self):
+        return self[0]
+    def heap_extract_max(self):
+        if self.heap_size < 1:
+            sys.exit("heap underflow")
+        maximum = self[0]
+        self[0] = self[self.heap_size - 1]
+        self[0].index = 0
+        self.heap_size = self.heap_size - 1
+        self.max_heapify(0)
+        return maximum
+    def heap_increase_key(self, i, key):
+        if key < self[i].__dict__[self.attr]:
+            sys.exit("new key is smaller than current key")
+        self[i].__dict__[self.attr] = key
+        while i > 0 and self[self.parent(i)].__dict__[self.attr] < self[i].__dict__[self.attr]:
+            self[i],self[self.parent(i)] = self[self.parent(i)], self[i]
+            self[i].index = i
+            self[self.parent(i)].index = self.parent(i)
+            i = self.parent(i)
 class min_heap(list):
     def __init__(self, data, attr):
         '''
@@ -165,12 +221,6 @@ class min_priority_queue(min_heap):
             self[i].index = i
             self[self.parent(i)].index = self.parent(i)
             i = self.parent(i)
-    def min_heap_insert(self, key):
-        if self.heap_size >= self.length:
-            sys.exit("heap overflow")
-        self.heap_size = self.heap_size + 1
-        self[self.heap_size - 1].weight = float("Inf")
-        self.heap_decrease_key(self.heap_size - 1, key)
 class Vertex(object):
     def __init__(self, key):
         self.key = key
@@ -651,7 +701,7 @@ class Graph(object):
         self.initialize_signle_source(s)
         S = set()
         Q = min_priority_queue(self.vertices, 'd')
-        while Q.heap_size > 0:
+        while Q.heap_size > 1:
             u = Q.heap_extract_min()
             S = S.union({u})
             for v in self.adj[u]:

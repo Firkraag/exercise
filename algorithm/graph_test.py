@@ -435,3 +435,23 @@ class TestGraph(unittest.TestCase):
         g.Dijkstra(w, s)
         self.assertEquals([i.p for i in vertices], [None, y, t, s, y])
         self.assertEquals([i.d for i in vertices], [0, 8, 9, 5, 7])
+        s = Vertex('s')
+        t = Vertex('t')
+        x = Vertex('x')
+        y = Vertex('y')
+        z = Vertex('z')
+        vertices = [s, t, x, y, z]
+        edges = [(s, t), (s, y), (t, x), (t, y), (x, z), (y, t), (y, x), (y, z), (z, s), (z, x)]
+        g = Graph(vertices, edges)
+        weight = [3, 5, 6, 2, 2, 1, 4, 6, 3, 7]
+        we = dict()
+        for i,j in zip(edges, weight):
+            we[i] = j    
+        def w(x, y):
+            return we[(x, y)]        
+        g.Dijkstra(w, s)
+        self.assertEquals([i.p for i in vertices], [None, s, t, s, y])
+        self.assertEquals([i.d for i in vertices], [0, 3, 9, 5, 11])
+        g.Dijkstra(w, z)
+        self.assertEquals([i.p for i in vertices], [z, s, z, s, None])
+        self.assertEquals([i.d for i in vertices], [3, 6, 7, 8, 0])
