@@ -161,6 +161,15 @@ class max_priority_queue(max_heap):
             self[i].index = i
             self[self.parent(i)].index = self.parent(i)
             i = self.parent(i)
+    def max_heap_insert(self, element):
+        if self.heap_size >= self.length:
+            sys.exit("heap overflow")
+        self.heap_size = self.heap_size + 1
+        self[self.heap_size - 1] = element
+        element.index = self.heap_size - 1
+        key = element.__dict__[self.attr]    
+        element.__dict__[self.attr] = float("-Inf")
+        self.heap_increase_key(self.heap_size - 1, key)
 class min_heap(list):
     def __init__(self, data, attr):
         '''
@@ -221,6 +230,15 @@ class min_priority_queue(min_heap):
             self[i].index = i
             self[self.parent(i)].index = self.parent(i)
             i = self.parent(i)
+    def min_heap_insert(self, element):
+        if self.heap_size >= self.length:
+            sys.exit("heap overflow")
+        self.heap_size = self.heap_size + 1
+        self[self.heap_size - 1] = element
+        element.index = self.heap_size - 1
+        key = element.__dict__[self.attr]
+        element.__dict__[self.attr] = float("Inf")
+        self.heap_decrease_key(self.heap_size - 1, key)
 class Vertex(object):
     def __init__(self, key):
         self.key = key
@@ -709,3 +727,33 @@ class Graph(object):
                     v.d = u.d + w(u, v)
                     v.p = u
                     Q.heap_decrease_key(v.index, u.d + w(u, v))
+    def Dijkstra_modified(self, w, s, W):
+        '''
+        A algorithm to the the case when the values of 
+        the weight function w is in the range {0, 1, ..., W}
+        for some nonnegative integer W.
+        '''
+        self.initialize_signle_source(s)
+        A = []
+        for i in range(0, W * len(self.vertices) + 1):
+            A.append(set())
+        A[0].add(s)
+        i = 0
+        S = set()
+        while True:
+            while i <= W * len(self.vertices) and len(A[i]) == 0:
+                i = i + 1
+            if i > W * len(self.vertices):
+                break
+            print "i = {}".format(i)
+            u = A[i].pop()
+            print u
+            print A[i]
+            S.add(u)
+            for v in self.adj[u]:
+                if v.d > u.d + w(u, v):
+                    if v.d < float("Inf"):
+                        A[int(v.d)].remove(v)
+                    v.d = u.d + w(u, v)
+                    A[int(v.d)].add(v)
+                    v.p = u
