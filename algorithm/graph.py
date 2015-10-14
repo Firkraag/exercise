@@ -243,7 +243,7 @@ class Vertex(object):
     def __init__(self, key):
         self.key = key
     def __repr__(self):
-        return self.key
+        return str(self.key)
     def print_path(self, v):
         '''print out the vertices on a shortest path from s to
         v, assuming that BFS has already computed a breadth-first tree'''
@@ -258,25 +258,25 @@ class Graph(object):
     def __init__(self, vertices = tuple(), edges = tuple(), directed = True):
         self.directed = directed
         self.vertices = set(vertices)
-        self.edges = set()
+        self.edges = list()
         self.adj = dict()
         for u in vertices:
-            self.adj[u] = set()
+            self.adj[u] = list()
         if directed == True:
             for u,v in edges:
                 self.addEdge(u, v)
-                self.edges.add((u, v))
+                self.edges.append((u, v))
         if directed == False:
             for u,v in edges:
                 self.addEdge(u, v)
                 self.addEdge(v, u)
-                self.edges.add((u, v))
-                self.edges.add((v, u))
+                self.edges.append((u, v))
+                self.edges.append((v, u))
     def addEdge(self, u, v):
-        self.adj[u].add(v)
+        self.adj[u].append(v)
     def addVertex(self, u, edges = tuple()):
         self.vertices.add(u)    
-        self.adj[u] = set(edges)
+        self.adj[u] = list(edges)
     def printEdge(self, u):
         for v in self.adj[u]:
             print v.key,

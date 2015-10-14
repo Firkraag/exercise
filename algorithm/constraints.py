@@ -2,15 +2,11 @@ from graph import Vertex, Graph
 from random import sample
 
 def Bellman_Ford(G, w, s):
-    '''
-    The Bellman-Ford algorithm solves the single-source
-    shortest-paths problem in the general case in which edge
-    weights may be negative.
-    If there is a negative-weight cycle that is reachable from 
-    the source s, this function returns False and indicates that
-    no solution exists.
-    If there is no such cycle, this function returns True and produces
-    the shortest paths and their weights.
+    '''A variant to the original Bellman_Ford algorithm
+	that we use to solve a system of difference constraints
+	with m inequalities on n unknowns. The running time is
+	O(nm), faster than O(n * n + nm) of the original Bellman-Ford
+	algorithm.
     '''
     edges = G.edges - set([(s, v) for v in G.adj[s]])
     G.initialize_signle_source(s)
