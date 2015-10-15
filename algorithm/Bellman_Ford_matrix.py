@@ -1,0 +1,48 @@
+import numpy as np
+
+def Bellman_Ford_matrix(W, s):
+    n = W.shape[0]
+    d = [float("Inf")] * n
+    p = [None] * n
+    d[s - 1] = 0
+    for k in range(1, n):
+        for i in range(1, n + 1):
+            for j in range(1, n + 1):
+                if d[j - 1] > d[i - 1] + W[i - 1, j - 1]:
+                    d[j - 1] = d[i - 1] + W[i - 1, j - 1]
+                    p[j - 1] = i
+        print d
+        print p
+    return d, p
+
+def extend_shortest_paths(L, W):
+    n = W.shape[0]
+    LW = [float("Inf")] * n
+    for j in range(0, n):
+        for k in range(0, n):
+            LW[j] = min(LW[j], L[k] + W[k, j])
+    return LW
+
+def slow_all_pairs_shortest_paths(W, s):
+    n = W.shape[0]
+    L = [0] * n
+    for i in range(0, n):
+        L[i] = W[s - 1, i]
+    print L
+    for m in range(2, n):
+        L = extend_shortest_paths(L, W)
+        print L
+    return L
+
+def faster_all_pairs_shortest_paths(W):
+    n = W.shape[0]
+    L = W
+    m = 1
+    while m < n - 1:
+        L = extend_shortest_paths(L, L)
+        m = 2 * m
+        print m
+        print L
+    return Ld, p
+
+
