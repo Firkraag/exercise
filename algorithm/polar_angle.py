@@ -42,7 +42,4 @@ def polar_angle(p0, point_list):
     heap_pi_2pi = max_heap(angle_pi_2pi)
     heap_0_pi.heapsort()
     heap_pi_2pi.heapsort()
-    print [(v.x, v.y) for v in angle_0]
-    print [(v.x, v.y) for v in angle_pi]
-    print [(v.x, v.y) for v in heap_0_pi]
-    print [(v.x, v.y) for v in heap_pi_2pi]
+    return [(v.x, v.y) for v in (angle_0 + heap_0_pi + angle_pi + heap_pi_2pi)]
