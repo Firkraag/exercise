@@ -6,24 +6,51 @@ from tree import Node, Tree
 from heap import max_heap
 from segment_intersect import segments_intersect
 
+def vertical(a):
+    return a[0][0] == a[1][0]
 def comparable(a, b, x):
     '''Given two segments a and b that are comparable at x, determine whether a is above b or not. Assume that neither segment is vertical '''
-
     p1 = a[0]
     p2 = a[1]
     p3 = b[0]
     p4 = b[1]
     x4 = p4[0]
     x3 = p3[0]
-    v1 = (p2[0] - p1[0], p2[1] - p1[1])
-    v2 = ((x4 - x3) * (p2[0] - p4[0]) + (x4 - x) * (p4[0] - p3[0]), (x4 - x3) * (p2[1] - p4[1]) + (x4 - x) * (p4[1] - p3[1]))
-    result = v1[0] * v2[1] - v2[0] * v1[1]
-    # a is above b
-    if result >= 0:
-        return True
-    # a is below b
+    if vertical(a) and vertical(b):
+        if p1[1] >= p3[1]:
+            return True
+        else:
+            return False
+    elif vertical(a) and not vertical(b):
+        v1 = (p4[0] - p3[0], p4[1] - p3[1])
+        v2 = (p4[0] - p1[0], p4[1] - p1[1])
+        result = v1[0] * v2[1] - v2[0] * v1[1]
+        # a is below b
+        if result >= 0:
+            return False
+        # a is above b
+        else:
+            return True
+    elif not vertical(a) and vertical(b):
+        v1 = (p2[0] - p1[0], p2[1] - p1[1])
+        v2 = (p2[0] - p3[0], p2[1] - p3[1])
+        result = v1[0] * v2[1] - v2[0] * v1[1]
+        # a is above b
+        if result >= 0:
+            return True
+        # a is above b
+        else:
+            return False
     else:
-        return False
+        v1 = (p2[0] - p1[0], p2[1] - p1[1])
+        v2 = ((x4 - x3) * (p2[0] - p4[0]) + (x4 - x) * (p4[0] - p3[0]), (x4 - x3) * (p2[1] - p4[1]) + (x4 - x) * (p4[1] - p3[1]))
+        result = v1[0] * v2[1] - v2[0] * v1[1]
+        # a is above b
+        if result >= 0:
+            return True
+        # a is below b
+        else:
+            return False
 class segment(tuple):
     def __init__(self, seg):
         super(segment, self).__init__(seg)
@@ -240,7 +267,7 @@ class rb_tree(Tree):
                     x = self.root
         x.color = 1
 def any_segments_intersect(S):
-	'''This algorithm takes as input a set S of n line segments, returning the boolean value TRUE if any pair of segments in S intersects, and FALSE otherwise.'''
+    '''This algorithm takes as input a set S of n line segments, returning the boolean value TRUE if any pair of segments in S intersects, and FALSE otherwise.'''
     T = rb_tree()
     segment_list = []
     point_list = []
