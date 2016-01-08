@@ -327,7 +327,6 @@ class TestGraph(unittest.TestCase):
             we[i] = j    
         def w(x, y):
             return we[(x, y)]        
-        print "vivien"
 #        G.Bellman_Ford(w, s)
         G.Bellman_Ford_modified(w, s)
         self.assertEquals([i.p for i in vertices], [None, s, t, s, s, s])
@@ -493,3 +492,19 @@ class TestGraph(unittest.TestCase):
         g.Dijkstra_modified(w, z, 7)
         self.assertEquals([i.p for i in vertices], [z, s, z, s, None])
         self.assertEquals([i.d for i in vertices], [3, 6, 7, 8, 0])
+#    def testJohnson(self):
+#        a1 = Vertex(1)
+#        a2 = Vertex(2)
+#        a3 = Vertex(3)
+#        a4 = Vertex(4)
+#        a5 = Vertex(5)
+#        vertices = [a1, a2, a3, a4, a5]
+#        edges = [(a1, a2), (a1, a3), (a1, a5), (a2, a4), (a2, a5), (a3, a2), (a4, a1), (a4, a3), (a5, a4)]
+#        g = Graph(vertices, edges)
+#        weight = [3, 8, -4, 1, 7, 4, 2, -5, 6]
+#        we = dict()
+#        for i,j in zip(edges, weight):
+#            we[i] = j    
+#        def w(x, y):
+#            return we[(x, y)]        
+#        g.Johnson(w)

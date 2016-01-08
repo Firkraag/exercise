@@ -1,6 +1,7 @@
 #!/usr/bin/env ipython
 
 def hamiltonian_path(G, u, v):
+    '''An algorithm to the hamiltonian-path problem on directed acyclic graphs'''
     we = dict()
     for i in G.edges:
         we[i] = -1    

@@ -757,3 +757,25 @@ class Graph(object):
                     v.d = u.d + w(u, v)
                     A[int(v.d)].add(v)
                     v.p = u
+#    def Johnson(self, w):
+#        G = self
+#        n = len(G.vertices)
+#        s = Vertex("s")
+#        GG = Graph(G.vertices.union({s}), G.edges + [(s, v) for v in G.vertices])
+#        for v in G.vertices:
+#            w((s, v)) = 0
+#        if GG.Bellman_Ford(w, s) == False:
+#            print "the input graph contains a negative-weight cycle"
+#        else:
+#            h = dict()
+#            for v in GG.vertices:
+#                h[v] = v.d
+#            ww = dict()
+#            for u, v in GG.edges:
+#                ww[(u, v)] = w[(u, v)] + h[u] - h[v]
+#            D = np.empty((n, n))
+#            for u in G.vertices:
+#                G.Dijkstra(ww, u)
+#                for v in G.vertices:
+#                    D[u.key - 1, v.key - 1] = v.d + h[v] - h[u]
+#            return D
