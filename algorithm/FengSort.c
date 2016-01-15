@@ -1,4 +1,8 @@
-FengSort(int A[], int first, int end)
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+void FengSort(int A[], int first, int end)
 {
 	int length = end - first + 1;
 	int MAX = 100;
@@ -17,7 +21,7 @@ FengSort(int A[], int first, int end)
 	free(B);
 }
 
-void main()
+int main()
 {
 	int a[9] = { 3, 41, 52, 31, 31, 57, 9, 31, 100 };
 	int b[2]	=	{100, 2};
@@ -29,4 +33,5 @@ void main()
 		   a[4], a[5], a[6], a[7], a[8]);
      FengSort(b, 0, 1);
      printf("%d,%d\n", b[0], b[1]);
+	 exit(0);
 } 
