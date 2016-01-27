@@ -1,8 +1,15 @@
 from queue import queue
 from priority_queue import min_priority_queue
-from disjoint_sets_forest import node as dsf_node
+import disjoint_sets_forest as dsf
 import math
 
+class dsf_node(dsf.node):
+    def __init__(self, key):
+        self.key = key
+        key.index = self
+        self.p = self
+        self.rank = 0
+        self.child = []
 #class vEB_node(object):
 #    def __init__(self, u):
 #        self.u = u

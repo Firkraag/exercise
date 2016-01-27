@@ -9,10 +9,10 @@ import os
 
 f = open('/home/windheart/bin/ftp.py')
 while True:
-	line = f.readline()
-	if len(line) == 0:
-		break
-	print(line)
+    line = f.readline()
+    if len(line) == 0:
+        break
+    print(line)
 f.close()
 f = open('/home/windheart/bin/ftp.py')
 f.read(1)

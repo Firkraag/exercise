@@ -3,10 +3,10 @@ from random import sample
 
 def Bellman_Ford(G, w, s):
     '''A variant to the original Bellman_Ford algorithm
-	that we use to solve a system of difference constraints
-	with m inequalities on n unknowns. The running time is
-	O(nm), faster than O(n * n + nm) of the original Bellman-Ford
-	algorithm.
+    that we use to solve a system of difference constraints
+    with m inequalities on n unknowns. The running time is
+    O(nm), faster than O(n * n + nm) of the original Bellman-Ford
+    algorithm.
     '''
     edges = G.edges - set([(s, v) for v in G.adj[s]])
     G.initialize_signle_source(s)
