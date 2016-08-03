@@ -17,7 +17,7 @@ int main()
     char line[MAXLINE]; /* current input line */
 
     while ((len = getline2(line, MAXLINE)) > 0) {
-        reverse(line, len);
+        reverse(line, line[len - 1] == '\n' ? len - 1 : len);
         printf("%s", line);
     }
     return 0;
@@ -41,7 +41,7 @@ int getline2(char s[],int lim)
 void reverse(char s[], int len)
 {
     int i = 0;
-    int j = (s[len - 1] == '\n' ? len - 2 : len - 1);
+    int j = len - 1;;
     int tmp;
 
     while (i < j)

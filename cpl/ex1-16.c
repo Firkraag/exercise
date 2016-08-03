@@ -8,7 +8,6 @@
 #include <stdio.h>
 #define MAXLINE 1000 /* maximum input line length */
 int getline2(char line[], int maxline);
-void copy(char to[], char from[]);
 
 int main()
 {
@@ -32,12 +31,4 @@ int getline2(char s[],int lim)
     }
     s[i] = '\0';
     return i;
-}
-/* copy: copy 'from' into 'to'; assume to is big enough */
-void copy(char to[], char from[])
-{
-    int i;
-    i = 0;
-    while ((to[i] = from[i]) != '\0')
-        ++i;
 }

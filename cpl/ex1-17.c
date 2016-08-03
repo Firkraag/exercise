@@ -6,21 +6,40 @@
  ************************************************************************/
 
 #include <stdio.h>
-#define MAXLINE 1000 /* maximum input line length */
-#define MAXCHARS 80 
+#define MAXLINE 20 /* maximum input line length */
+#define MAXCHARS 10 
+#define TRUE 1
+#define FALSE 0
 int getline2(char line[], int maxline);
 
+/* print all input lines that are longer than MAXCHARS characters */
 int main()
 {
     int len; /* current line length */
     char line[MAXLINE]; /* current input line */
+    int partial = FALSE; /* A flag indicating whether we are printing part of a line */ 
 
-    while ((len = getline2(line, MAXLINE)) > 0)
-        // print all input lines that are longer than 80 characters
-        if (len > MAXCHARS)
+    while ((len = getline2(line, MAXLINE)) != 0) {
+        if (partial) {
             printf("%s", line);
+            /* we are done printing the line */
+            if (line[len - 1] == '\n') {
+                partial = FALSE;
+            }
+        }
+        else if (len <= MAXCHARS) {
+            ;
+        }
+        else {
+            printf("%s", line);
+            if (line[len - 1] != '\n') {
+                partial = TRUE;
+            }
+        }
+    }
     return 0;
 }
+
 /* getline2: read a line into s, return length */
 int getline2(char s[],int lim)
 {
